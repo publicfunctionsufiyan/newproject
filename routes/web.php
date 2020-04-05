@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -28,14 +31,13 @@ Route::post('add-hotel', 'HotelController@create');
 
 
 
-Route::get('home', function () {
-    return view('home');
-})->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('signin','AuthController@loginForm')->name('login');
-Route::post('signin', 'AuthController@login');
 
-Route::get('getlogout','AuthController@logout')->name('logout');
+Route::get('login','LoginController@loginForm')->name('login');
+Route::post('login', 'LoginController@login');
 
-Route::get('joinus', 'AuthController@registrationForm')->name('register');
-Route::post('joinus', 'AuthController@register');
+Route::post('logout','LoginController@logout')->name('logout');
+
+Route::get('register', 'RegisterController@registrationForm')->name('register');
+Route::post('register', 'RegisterController@create');

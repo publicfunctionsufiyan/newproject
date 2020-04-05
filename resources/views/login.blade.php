@@ -106,7 +106,7 @@
         <input type="password" placeholder="Password" required name="password">
       </br>
       <button type="submit" class="btn btn-primary">
-                                    {{ __('Sign in') }}
+                                    Sign in
                                 </button>
       </form>
       

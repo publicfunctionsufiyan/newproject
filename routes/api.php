@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login', 'AuthController@login');
-Route::post('register', 'AuthController@register');
+Route::post('login', 'LoginController@login');
+Route::post('register', 'RegisterController@create');
 
 // User Routes
 Route::post('update-user/{id}', 'UserController@update');

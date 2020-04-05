@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +66,16 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           
-          <li><a href="{{ route('logout') }}">Logout</a></li>
+          <li> <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </li>
           
 
 
@@ -75,9 +88,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
-    @if (session('Status'))
-  <h1>{{session('Status')}}</h1>
-@endif
+
       <h1>Let's start</h1>
       
       <form method="POST">
