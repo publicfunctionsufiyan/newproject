@@ -3,11 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Hotel extends Model
+class Hotel extends Model implements HasMedia
 {
+    use InteractsWithMedia;
+
+    public $with = ['media'];
+
+
     protected $fillable = [
-        'name', 'address', 'rating', 'blocks'
+        'name', 'address', 'rating', 'blocks', 'let', 'long', 'zoom'
     ];
 
 

@@ -7,6 +7,7 @@ use App\Hotel;
 use App\Amenity;
 use App\Block;
 use App\Hotel_Amenities;
+use App\Media;
 
 class HotelController extends Controller
 {   
@@ -18,7 +19,7 @@ class HotelController extends Controller
         return response()->json(['success' => true], 200);
     }
 
-    public function updateHotel(Request $request, $id)
+    public function updateHoteldetails(Request $request, $id)
     {
         $hotel = Hotel::findOrFail($id);
         $input = $request->all();
@@ -26,10 +27,27 @@ class HotelController extends Controller
         return 'Hotel updated successfully';
     }
 
+    public function addimage(Request $request, $id)
+    {   
+        $hotel = Hotel::findOrFail($id);
+        $input = $request->all();        
+        $hotel->addMedia($input['image'])->toMediaCollection('hotel-images');
+        return 'Add image successfully';
+    }
+
+    public function deleteAllHotelImages($id)
+    {
+        $hotel = Hotel::findOrFail($id);
+        $hotel->clearMediaCollection('hotel-images');
+        return 'Images deleted successfully';
+    }
+
+    
     public function deleteHotel($id)
     {
         $hotel = Hotel::findOrFail($id);
         $hotel->delete();
+        $hotel->clearMediaCollection('hotel-images');
         return 'Hotel deleted successfully';
     }
 

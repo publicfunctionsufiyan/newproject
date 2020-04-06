@@ -3,9 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Room extends Model
+class Room extends Model implements HasMedia
 {
+    use InteractsWithMedia;
+    public $with = ['media'];
+
     protected $fillable = [
         'block_id', 'room_type_id', 'floor','price', 'availablity'
     ];

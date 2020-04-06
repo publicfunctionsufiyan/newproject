@@ -14,10 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('welcome-admin', function () {
+    return view('admin');
+});
+
 Route::post('login', 'LoginController@login');
 Route::post('register', 'RegisterController@create');
 
 // User Routes
+Route::post('profile-picture/{id}', 'UserController@profilePicture'); 
 Route::post('update-user/{id}', 'UserController@update');
 Route::delete('delete-user/{id}', 'UserController@deleteUser');
 Route::get('show-all-users', 'UserController@showAllUsers');
@@ -25,8 +30,11 @@ Route::get('show-user-by-id/{id}', 'UserController@showUserById');
 
 //Hotel Routes
 Route::post('create-hotel', 'HotelController@create');
-Route::post('update-hotel/{id}', 'HotelController@updateHotel');
+Route::post('add-image/{id}', 'HotelController@addimage');
+Route::post('update-hotel-details/{id}', 'HotelController@updateHoteldetails');
 Route::delete('delete-hotel/{id}', 'HotelController@deleteHotel');
+// Route::delete('delete-hotel-image/{id}', 'HotelController@deleteHotelImage');
+Route::delete('delete-all-hotel-images/{id}', 'HotelController@deleteAllHotelImages');
 Route::get('show-all-hotels', 'HotelController@showAllHotels');
 Route::get('show-hotel-by-id/{id}', 'HotelController@showHotelById');
 

@@ -26,8 +26,9 @@ class LoginController extends Controller
             $success['token'] = $user->createToken('Laravel Password Grant Client')->accessToken;
             unset($user->password);
             $success['user'] = $user;
+            return redirect('home');
+
             // return response()->json(['success' => $success], 200);
-            return redirect('home')->with($success);
         }
         else {
         return response()->json(['error' => 'Unauthorised'], 401);

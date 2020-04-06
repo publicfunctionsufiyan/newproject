@@ -20,16 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('welcome-admin', function () {
-    return view('admin');
-})->middleware('role:user');
-
-Route::get('add-hotel', 'HotelController@form')->name('newhotel');
-Route::post('add-hotel', 'HotelController@create');
-
-
-
-
 
 Route::get('home', 'HomeController@index')->name('home');
 

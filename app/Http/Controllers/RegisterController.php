@@ -7,24 +7,29 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class RegisterController extends Controller
 {
 
-
-
     use RegistersUsers;
 
-
-
     protected $redirectTo = '/home';
+
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
 
     public function registrationForm()
     {
         return view('register');
     }
+    
 
-    // REGISTER
+    
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), ['name' => 'required', 'email' => 'required|email', 'password' => 'required|confirmed|min:8']);
@@ -40,10 +45,20 @@ class RegisterController extends Controller
         if ($user->user_type == 1) $user->assignRole('user');
         if ($user->user_type == 2) $user->assignRole('owner');
 
-        $success['token'] = $user->createToken('Laravel Password Grant Client')->accessToken;
-        $success['user'] = $user;
+        $registered['token'] = $user->createToken('Laravel Password Grant Client')->accessToken;
+        $registered['user'] = $user;
         
+        $credentials = $request->only('email', 'password');
+        Auth::attempt($credentials);
+        $user = Auth::user();
+        $success['token'] = $user->createToken('Laravel Password Grant Client')->accessToken;
+        unset($user->password);
+        $success['user'] = $user;
+
         // return response()->json(['success' => $success], 200);
-        return redirect('home')->with($success);
+        return redirect('home');
+        
     }
+
+    
 }
