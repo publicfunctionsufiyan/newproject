@@ -331,7 +331,7 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    @foreach ($user as $row)
+                    @foreach ($hotels as $row)
                    <tr>
                       <td>{{ $row->name }}</td>
                       <td>{{ $row->address }}</td>
