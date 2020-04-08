@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookingsTable extends Migration
+class CreateUserRatingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,16 @@ class CreateBookingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookings', function (Blueprint $table) {
+        Schema::create('user_ratings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('room_id');
             $table->unsignedInteger('user_id');
-            $table->string('customer_name');
-            $table->dateTime('from');
-            $table->dateTime('to');
+            $table->unsignedInteger('hotel_id');
+            $table->Integer('rating');
             $table->timestamps();
         });
-
-        Schema::table('bookings', function ($table) {
-            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('set null');
+        Schema::table('user_ratings', function ($table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('set null');
         });
     }
 
@@ -36,6 +33,6 @@ class CreateBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookings');
+        Schema::dropIfExists('user_ratings');
     }
 }
