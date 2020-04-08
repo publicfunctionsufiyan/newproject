@@ -354,15 +354,20 @@
             <select class="form-control">
               <option selected="">Room</option>
               <option>Room 1</option>
-              <option>Room 2</option>
-              <option>Room 3</option>
             </select>
               </div>
               
               <div class="form-group input-group">
                 <input name="Customer-Name" class="form-control" placeholder="Customer Name" type="text">
                 </div> 
+
+                <div class="form-group input-group">
+                <input name="From" class="form-control" placeholder="From" type="date">
+                </div>
                 
+                <div class="form-group input-group">
+                <input name="To" class="form-control" placeholder="To" type="date">
+                </div> 
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block"> Create </button>
                   </div> 

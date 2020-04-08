@@ -37,16 +37,15 @@ class UserController extends Controller
     
     public function showUserById($id)
     {
-        $user = User::findOrFail($id);
-        $user->getMedia('user-images');
-
-        return $user;
+        return User::findOrFail($id);
+        
     }
 
     public function profilePicture(Request $request, $id)
     {
-        
               $user = User::findOrFail($id);
+              $path = $request->file('image')->store('user-images');
+              $complete_path = "http://192.168.1.100/file-storage/storage/app/".$path;
               $input = $request->all();
               $user->addMedia($input['image'])->toMediaCollection('user-images');
               return response()->json(['success' => true], 200);

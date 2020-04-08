@@ -310,6 +310,7 @@
                   <thead>
                     
                     <tr>
+                      <th>Id</th>
                       <th>Name</th>
                       <th>Address</th>
                       <th>Rating</th>
@@ -321,6 +322,7 @@
                   </thead>
                   <tfoot>
                     <tr>
+                      <th>Id</th>
                       <th>Name</th>
                       <th>Address</th>
                       <th>Rating</th>
@@ -333,6 +335,7 @@
                   <tbody>
                     @foreach ($hotels as $row)
                    <tr>
+                      <td>{{ $row->id }}</td>
                       <td>{{ $row->name }}</td>
                       <td>{{ $row->address }}</td>
                       <td>{{ $row->rating }}</td>

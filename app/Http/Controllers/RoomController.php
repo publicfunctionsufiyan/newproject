@@ -38,15 +38,27 @@ class RoomController extends Controller
 
     public function showRoomById($id)
     {
-        $room = Room::findOrFail($id);
-        return $room;
+        return Room::findOrFail($id);
     }
 
     public function showRoomByHotel($id)
     {
         $hotel = Hotel::find($id);
         $room = $hotel->$room;
-        return response()->json(['Signed URLs' => $room], 200);
+        return $room;
+    }
+
+
+
+    public function addimage(Request $request, $id)
+    {   
+        $room = Room::findOrFail($id);
+
+        $path = $request->file('image')->store('room-images');
+        $complete_path = "http://192.168.1.100/file-storage/storage/app/".$path;
+        $input = $request->all();        
+        $hotel->addMedia($input['image'])->toMediaCollection('room-images');
+        return 'Add image successfully';
     }
     
 

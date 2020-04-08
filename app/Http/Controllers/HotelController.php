@@ -30,6 +30,9 @@ class HotelController extends Controller
     public function addimage(Request $request, $id)
     {   
         $hotel = Hotel::findOrFail($id);
+
+        $path = $request->file('image')->store('hotel-images');
+        $complete_path = "http://192.168.1.100/file-storage/storage/app/".$path;
         $input = $request->all();        
         $hotel->addMedia($input['image'])->toMediaCollection('hotel-images');
         return 'Add image successfully';

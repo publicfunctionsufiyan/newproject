@@ -309,20 +309,25 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Name</th>
+                    <th>Id</th>
+                    <th>Name</th>
                     </tr>
                   </tfoot>
                   <tbody>
+                  @foreach ($amenity as $row)
                    <tr>
-                      <td>Pool</td>
+                      <td>{{ $row->id }}</td>
+                      <td>{{ $row->name }}</td>
                       
                     </tr>
-                   
+                   @endforeach
                   </tbody>
                 </table>
               </div>

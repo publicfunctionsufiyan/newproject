@@ -27,12 +27,7 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('user/assets/css/style.css') }}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Maxim - v2.1.0
-  * Template URL: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 <style>
   input[type=email], select {
@@ -89,8 +84,7 @@
 
       <div class="logo mr-auto">
         <h1 class="text-light"><a href="">trace it</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -107,12 +101,6 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-center">
       <h1>Create your account</h1>
-
-      <!-- @if (count($errors) > 0)
-        @foreach ($errors->all() as  $error)
-          <p class="alert alert-danger">{{$error}}</p> 
-        @endforeach
-        @endif -->
 
       <form method="POST" action="{{ route('register') }}">
       @csrf

@@ -309,20 +309,35 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th>Booking Id</th>
+                      <th>User Id</th>
                       <th>Room</th>
                       <th>Customer Name</th>
+                      <th>From</th>
+                      <th>To</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
+                    <th>Booking Id</th>
+                      <th>User Id</th>
                       <th>Room</th>
                       <th>Customer Name</th>
+                      <th>From</th>
+                      <th>To</th>
                     </tr>
                   </tfoot>
                   <tbody>
                    <tr>
                       <td>1</td>
-                      <td>Sufiyan</td>
+                      <td>1</td>
+                      <td>20</td>
+                      <td>Ali</td>
+                      <th>01/07/2020</th>
+                      <th>02/11/2020</th>
+                      
+
+
                     </tr>
                    
                   </tbody>

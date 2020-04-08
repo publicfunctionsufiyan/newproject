@@ -28,7 +28,8 @@ class LoginController extends Controller
             $success['user'] = $user;
             if($user['user_type']==0)
             {
-                return redirect('welcome-admin');
+                
+                return view('admin');
             }
             else
             {
