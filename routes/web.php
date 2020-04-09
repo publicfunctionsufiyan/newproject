@@ -3,6 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Hotel;
 use App\Amenity;
+use App\Block;
+use App\Room;
+use App\Room_Type;
+use App\User;
+use App\Booking;
+
+
 
 
 /*
@@ -57,7 +64,8 @@ Route::get('admin-add-hotels', function () {
 
 
 Route::get('admin-users', function () {
-    return view('admin.user.users');
+    $user = User::all();
+    return view('admin.user.users')->with('user',$user);
 })->name('admin-users');
 
 Route::get('admin-add-users', function () {
@@ -66,7 +74,8 @@ Route::get('admin-add-users', function () {
 
 
 Route::get('admin-bookings', function () {
-    return view('admin.booking.bookings');
+    $booking = Booking::all();
+    return view('admin.booking.bookings')->with('booking',$booking);
 })->name('admin-bookings');
 
 Route::get('admin-add-bookings', function () {
@@ -75,7 +84,8 @@ Route::get('admin-add-bookings', function () {
 
 
 Route::get('admin-blocks', function () {
-    return view('admin.block.blocks');
+    $block = Block::all();
+    return view('admin.block.blocks')->with('block', $block);
 })->name('admin-blocks');
 
 Route::get('admin-add-blocks', function () {
@@ -84,7 +94,8 @@ Route::get('admin-add-blocks', function () {
 
 
 Route::get('admin-rooms', function () {
-    return view('admin.room.rooms');
+    $room = Room::all();
+    return view('admin.room.rooms')->with('room', $room);
 })->name('admin-rooms');
 
 Route::get('admin-add-rooms', function () {
@@ -93,7 +104,8 @@ Route::get('admin-add-rooms', function () {
 
 
 Route::get('admin-room-types', function () {
-    return view('admin.room.room-types');
+    $type = Room_Type::all();
+    return view('admin.room.room-types')->with('type', $type);
 })->name('admin-room-types');
 
 Route::get('admin-add-room-types', function () {
@@ -109,3 +121,5 @@ Route::get('admin-amenities', function () {
 Route::get('admin-add-amenities', function () {
     return view('admin.hotel.create-amenities');
 })->name('admin-add-amenities');
+
+

@@ -77,5 +77,5 @@ Route::get('show-booking-by-id/{id}','BookingController@showBookingById');
 
 //Hotel Amenities Routes
 Route::post('create-hotel-amenities','HotelController@createHotelAmenities');
-Route::delete('delete-hotel-amenities/{id}','HotelController@deleteHotelAmenities');
+Route::delete('delete-hotel-amenities/{id}','HotelController@deleteHotelAmenities')->name('delete-hotel-amenities');
 Route::get('show-all-hotel-amenities','HotelController@showAllHotelAmenities');

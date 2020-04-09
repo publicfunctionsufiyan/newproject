@@ -27,12 +27,15 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html">trace it</a></h1>
+        <h1 class="text-light"><a href="index.html">book now</a></h1>
         
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
+        <li><a href="{{ url('hotel') }}">Hotels</a></li>
+        <li><a href="{{ url('hotel') }}">Rooms</a></li>
+
           
           @if (Route::has('login'))
           @auth
@@ -96,9 +99,15 @@
                             <div class="room-title">
                                 <h2>{{ $row->name }}</h2>
                                 <div class="room-price">
-                                    <span>From</span>
-                                    <h2>$179</h2>
-                                    <sub>/night</sub>
+                                    
+                                    
+                                @php
+                            $x = $row->rating
+                            @endphp
+                           
+                            @for ($i=1; $i<=$x; $i++)
+                            <img src="{{ asset('user/hotel/star.png') }}" height="3%" width="3%">
+                           @endfor
                                 </div>
                             </div>
                             <div class="room-desc">
@@ -106,25 +115,16 @@
                             </div>
                             
                            
-                            @php
-                            $x = $row->rating
-                            @endphp
                            
-                            @for ($i=1; $i<=$x; $i++)
-                            <img src="{{ asset('user/hotel/star.png') }}" height="3%" width="3%">
-                           @endfor
 
                             
                             
                            
                             <div class="room-features">
-                                <div class="room-info">
-                                    <i class="flaticon-019-television"></i>
-                                    <span>Smart TV</span>
-                                </div>
+                                
                                 <div class="room-info">
                                     <i class="flaticon-029-wifi"></i>
-                                    <span>High Wi-fii</span>
+                                    <span>Wi-fii</span>
                                 </div>
                                 <div class="room-info">
                                     <i class="flaticon-003-air-conditioner"></i>

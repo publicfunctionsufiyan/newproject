@@ -309,37 +309,44 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Booking Id</th>
-                      <th>User Id</th>
+                      <th>Id</th>
+                      <th>User</th>
                       <th>Room</th>
                       <th>Customer Name</th>
                       <th>From</th>
                       <th>To</th>
+                      <th>Edit</th>
+                    <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                    <th>Booking Id</th>
+                      <th>Id</th>
                       <th>User Id</th>
                       <th>Room</th>
                       <th>Customer Name</th>
                       <th>From</th>
                       <th>To</th>
+                      <th>Edit</th>
+                    <th>Delete</th>
                     </tr>
                   </tfoot>
                   <tbody>
+                  @foreach ($booking as $row)
+
                    <tr>
-                      <td>1</td>
-                      <td>1</td>
-                      <td>20</td>
-                      <td>Ali</td>
-                      <th>01/07/2020</th>
-                      <th>02/11/2020</th>
-                      
+                      <td>{{ $row->id }}</td>
+                      <td>{{ $row->user_id }}</td>
+                      <td>{{ $row->room_id }}</td>
+                      <td>{{ $row->customer_name }}</td>
+                      <th>{{ $row->from }}</th>
+                      <th>{{ $row->to }}</th>
+                      <td width="5%"><i class="fas fa-edit text-gray-300" data-toggle="modal" data-target="#exampleModalCenter"></i></td>
+                      <td width="5%"><i class="fas fa-trash text-gray-300"></i></td>
 
 
                     </tr>
-                   
+                   @endforeach
                   </tbody>
                 </table>
               </div>
@@ -348,7 +355,25 @@
 
         </div>
         <!-- /.container-fluid -->
-
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
       <!-- End of Main Content -->
 

@@ -297,7 +297,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Hotel Amenities</h1>
+            <h1 class="h3 mb-0 text-gray-800">Hotels Ameneties</h1>
             <a href="{{ url('admin-add-amenities') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add New</a>
           </div>
 
@@ -308,24 +308,29 @@
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
-                    <tr>
-                    <th>Id</th>
-                    <th>Name</th>
                     
+                    <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Edit</th>
+                    <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                    <th>Id</th>
-                    <th>Name</th>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Edit</th>
+                    <th>Delete</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                  @foreach ($amenity as $row)
+                    @foreach ($amenity as $row)
                    <tr>
                       <td>{{ $row->id }}</td>
                       <td>{{ $row->name }}</td>
-                      
+                      <td width="5%"><i class="fas fa-edit text-gray-300" data-toggle="modal" data-target="#exampleModalCenter"></a></i></td>
+                      <td width="5%"><i class="fas fa-trash text-gray-300"></i></td>
                     </tr>
                    @endforeach
                   </tbody>
@@ -335,6 +340,27 @@
           </div>
 
         </div>
+
+        <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
         <!-- /.container-fluid -->
 
       </div>
@@ -392,7 +418,7 @@
 
   <!-- Page level plugins -->
   <script src="{{ asset('admin/vendor/datatables/jquery.dataTables.min.js') }}"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
   <!-- Page level custom scripts -->
   <script src="{{ asset('admin/js/demo/datatables-demo.js') }}"></script>

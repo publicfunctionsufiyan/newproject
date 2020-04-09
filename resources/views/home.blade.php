@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Maxim Bootstrap Template - Index</title>
+  <title>Book</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -56,14 +56,17 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html">trace it</a></h1>
+        <h1 class="text-light"><a href="index.html">book now</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-        
+        <li><a href="{{ url('hotel') }}">Hotels</a></li>
+        <li><a href="{{ url('hotel') }}">Rooms</a></li>
+
+
                         
                         @guest
                             <li class="nav-item">
@@ -85,7 +88,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        Logout
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
