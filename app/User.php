@@ -9,6 +9,8 @@ use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\Models\Media;
+
 
 class User extends Authenticatable implements HasMedia
 {
@@ -23,6 +25,10 @@ class User extends Authenticatable implements HasMedia
     protected $fillable = [
         'name', 'email', 'password', 'user_type'
     ];
+
+    protected $attributes = [
+        'user_type' => 1,
+     ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -41,4 +47,7 @@ class User extends Authenticatable implements HasMedia
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
+    
 }

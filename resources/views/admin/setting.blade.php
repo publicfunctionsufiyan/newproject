@@ -28,7 +28,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-       <!-- Sidebar -->
+      <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
@@ -272,6 +272,7 @@
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
+               
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                              onclick="event.preventDefault();
@@ -296,52 +297,16 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Hotels Ameneties</h1>
-            <a href="{{ url('admin-add-amenities') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add New</a>
+            <h1 class="h3 mb-0 text-gray-800">Setting</h1>
+            
           </div>
 
           <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-           
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    
-                    <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Edit</th>
-                    <th>Delete</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Edit</th>
-                    <th>Delete</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    @foreach ($amenity as $row)
-                   <tr>
-                      <td>{{ $row->id }}</td>
-                      <td>{{ $row->name }}</td>
-                      <td width="5%"><i class="fas fa-edit text-gray-300" data-toggle="modal" data-target="#exampleModalCenter"></a></i></td>
-                      <td width="5%"><i class="fas fa-trash text-gray-300"></i></td>
-                    </tr>
-                   @endforeach
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
-
-        <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <!-- /.container-fluid -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -360,8 +325,6 @@
     </div>
   </div>
 </div>
-        <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
 

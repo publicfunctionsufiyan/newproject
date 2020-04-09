@@ -261,17 +261,16 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+              <a class="dropdown-item" href="{{ url('/') }}">
+              <i class="fas fa-link fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                  <!-- <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> -->
+                  Back to site
                 </a>
-                <a class="dropdown-item" href="#">
+                <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{ url('admin-setting') }}">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -311,22 +310,32 @@
                     <tr>
                       <th>Id</th>
                       <th>User</th>
-                      <th>Room</th>
+                      <th>Hotel</th>
+                      <th>Room Type</th>
                       <th>Customer Name</th>
                       <th>From</th>
                       <th>To</th>
+                      <th>Adults</th>
+                      <th>Children</th>
+                      <th>Rooms</th>
+
+
                       <th>Edit</th>
                     <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Id</th>
-                      <th>User Id</th>
-                      <th>Room</th>
+                    <th>Id</th>
+                      <th>User</th>
+                      <th>Hotel</th>
+                      <th>Room Type</th>
                       <th>Customer Name</th>
                       <th>From</th>
                       <th>To</th>
+                      <th>Adults</th>
+                      <th>Children</th>
+                      <th>Rooms</th>
                       <th>Edit</th>
                     <th>Delete</th>
                     </tr>

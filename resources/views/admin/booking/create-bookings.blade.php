@@ -301,17 +301,16 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+              <a class="dropdown-item" href="{{ url('/') }}">
+              <i class="fas fa-link fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                  <!-- <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> -->
+                  Back to site
                 </a>
-                <a class="dropdown-item" href="#">
+                <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{ url('admin-setting') }}">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -349,13 +348,19 @@
           
           
             <form>
-                
-              <div class="form-group input-group">
+            <div class="form-group input-group">
             <select class="form-control">
-              <option selected="">Room</option>
+              <option selected="">Hotel</option>
               <option>Room 1</option>
             </select>
               </div>
+              <div class="form-group input-group">
+            <select class="form-control">
+              <option selected="">Room Type</option>
+              <option>Room 1</option>
+            </select>
+              </div>
+
               
               <div class="form-group input-group">
                 <input name="Customer-Name" class="form-control" placeholder="Customer Name" type="text">
@@ -367,6 +372,15 @@
                 
                 <div class="form-group input-group">
                 <input name="To" class="form-control" placeholder="To" type="date">
+                </div> 
+                <div class="form-group input-group">
+                <input name="Adults" class="form-control" placeholder="Adults" type="text">
+                </div> 
+                <div class="form-group input-group">
+                <input name="Children" class="form-control" placeholder="Children" type="text">
+                </div> 
+                <div class="form-group input-group">
+                <input name="Rooms" class="form-control" placeholder="Rooms" type="text">
                 </div> 
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block"> Create </button>

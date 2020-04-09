@@ -81,7 +81,7 @@
     <!-- Rooms Section Begin -->
     <section class="room-section spad">
         <div class="container">
-        @foreach ($hotels as $row)
+       
            
             <div class="rooms-page-item">
                 <div class="row">
@@ -102,21 +102,19 @@
                     <div class="col-lg-6">
                         <div class="room-text">
                             <div class="room-title">
-                                <h2>{{ $row->name }}</h2>
+                                <h2>Double Suite</h2>
                                 <div class="room-price">
+                                <div class="room-price">
+                                    <h2>$100</h2>
+                                    <sub>/night</sub>
+                                </div>
                                     
-                                    
-                                @php
-                            $x = $row->rating
-                            @endphp
-                           
-                            @for ($i=1; $i<=$x; $i++)
-                            <img src="{{ asset('user/hotel/star.png') }}" height="3%" width="3%">
-                           @endfor
+                        
                                 </div>
                             </div>
+
                             <div class="room-desc">
-                                <p>{{ $row->address }}</p>
+                                <p>The double suite has 2 double beds and a sleeper sofa with small kitchenette.</p>
                             </div>
                             
                            
@@ -128,34 +126,96 @@
                             <div class="room-features">
                                 
                                 <div class="room-info">
-                                    <i class="flaticon-029-wifi"></i>
-                                    <span>Wi-fii</span>
+                                    
+                                    <span>Size</span>
+                                    <p>325 sq. ft.</p>
                                 </div>
                                 <div class="room-info">
-                                    <i class="flaticon-003-air-conditioner"></i>
-                                    <span>AC</span>
-                                </div>
-                                <div class="room-info">
-                                    <i class="flaticon-036-parking"></i>
-                                    <span>Parking</span>
-                                </div>
-                                <div class="room-info last">
-                                    <i class="flaticon-007-swimming-pool"></i>
-                                    <span>Pool</span>
-                                </div>
-                            </div>
-                            <button type="button" class="primary-btn">Rooms<i class="lnr lnr-arrow-right"></i></button>
+                                    
+                                    <span>Beds</span>
+                                    <p>2 double</p>
 
+                                </div>
+                                
+                              
+                            </div>
+                            <button type="button" class="primary-btn" data-toggle="modal" data-target="#exampleModalCenter">Book Now<i class="lnr lnr-arrow-right"></i></button>
+                            
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
+          
 
         </div>
     </section>
 
     <!-- Rooms Section End -->
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      <h5 class="modal-title" id="exampleModalLongTitle">Check Availability</h5>
+
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+
+      </div>
+      <div class="modal-body">
+      <form>
+            <div class="form-group input-group">
+            <select class="form-control">
+              <option selected="">Hotel</option>
+              <option>Room 1</option>
+            </select>
+              </div>
+              <div class="form-group input-group">
+            <select class="form-control">
+              <option selected="">Room Type</option>
+              <option>Room 1</option>
+            </select>
+              </div>
+
+              
+              <div class="form-group input-group">
+                <input name="Customer-Name" class="form-control" placeholder="Customer Name" type="text">
+                </div> 
+
+                <div class="form-group input-group">
+                <input name="From" class="form-control" placeholder="From" type="date">
+                </div>
+                
+                <div class="form-group input-group">
+                <input name="To" class="form-control" placeholder="To" type="date">
+                </div> 
+                <div class="form-group input-group">
+                <input name="Adults" class="form-control" placeholder="Adults" type="text">
+                </div> 
+                <div class="form-group input-group">
+                <input name="Children" class="form-control" placeholder="Children" type="text">
+                </div> 
+                <div class="form-group input-group">
+                <input name="Rooms" class="form-control" placeholder="Rooms" type="text">
+                </div> 
+                <div class="form-group">
+                  <button type="submit" class="primary-btn btn-block">Check Availability<i class="lnr lnr-arrow-right"></i></button>
+                  </div> 
+                
+            
+             
+        </form>
+      </div>
+  
+    </div>
+  </div>
+</div>
+      </div>
+
   </main><!-- End #main -->
 
   @extends('layouts.footer')

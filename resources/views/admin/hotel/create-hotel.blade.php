@@ -299,17 +299,16 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+              <a class="dropdown-item" href="{{ url('/') }}">
+              <i class="fas fa-link fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                  <!-- <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> -->
+                  Back to site
                 </a>
-                <a class="dropdown-item" href="#">
+                <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{ url('admin-setting') }}">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -346,29 +345,29 @@
           
           
           
-          <form>
-                
+          <form method="POST" action="{{ route('create-hotel') }}">
+      @csrf
                 <div class="form-group input-group">
-                  <input name="Name" class="form-control" placeholder="Name" type="text">
+                  <input name="name" class="form-control" placeholder="Name" type="text">
                   </div> 
 
                   <div class="form-group input-group">
-                    <input name="Address" class="form-control" placeholder="Address" type="text">
+                    <input name="address" class="form-control" placeholder="Address" type="text">
                     </div> 
                     <div class="form-group input-group">
-                      <input name="Rating" class="form-control" placeholder="Rating" type="text">
+                      <input name="rating" class="form-control" placeholder="Rating" type="text">
                       </div> 
                       <div class="form-group input-group">
-                        <input name="Blocks" class="form-control" placeholder="Blocks" type="text">
+                        <input name="blocks" class="form-control" placeholder="Blocks" type="text">
                         </div> 
                         <div class="form-group input-group">
-                          <input name="Latitude" class="form-control" placeholder="Latitude" type="text">
+                          <input name="let" class="form-control" placeholder="Latitude" type="text">
                           </div> 
                           <div class="form-group input-group">
-                            <input name="Longitude" class="form-control" placeholder="Longitude" type="text">
+                            <input name="long" class="form-control" placeholder="Longitude" type="text">
                             </div> 
                             <div class="form-group input-group">
-                              <input name="Zoom" class="form-control" placeholder="Zoom" type="text">
+                              <input name="zoom" class="form-control" placeholder="Zoom" type="text">
                               </div> 
                   
                   

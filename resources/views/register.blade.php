@@ -83,14 +83,19 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="">trace it</a></h1>
+        <h1 class="text-light"><a href="{{ url('/') }}">book now</a></h1>
         
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li><a href="{{ route('login') }}">Sign in</a></li>
-          <li><a href="{{ route('register') }}">Join us</a></li>
+        <li><a href="{{ url('/') }}">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="{{ url('hotels') }}">Hotels</a></li>
+        <li><a href="{{ url('rooms') }}">Rooms</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li class="active"><a href="{{ route('register') }}">Register</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -113,7 +118,7 @@
       <input type="password" placeholder="Confirm Password" required name="password_confirmation">
       </br>
       <button type="submit" class="btn btn-primary">
-      {{ __('Create your account') }}
+      {{ __('Sign Up') }}
       </button>
 
       </form>

@@ -56,7 +56,7 @@ class RegisterController extends Controller
         $success['user'] = $user;
 
         // return response()->json(['success' => $success], 200);
-        return redirect('home');
+        return redirect('/');
         
     }
 

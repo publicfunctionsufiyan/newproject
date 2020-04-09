@@ -47,8 +47,19 @@ class UserController extends Controller
               $path = $request->file('image')->store('user-images');
               $complete_path = "http://192.168.1.100/file-storage/storage/app/".$path;
               $input = $request->all();
+              $user->clearMediaCollection('user-images');
               $user->addMedia($input['image'])->toMediaCollection('user-images');
               return response()->json(['success' => true], 200);
     }
+
+    public function getimage($id)
+    {
+        $user = User::findOrFail($id);
+        $image = $user->getMedia('user-images');
+        $url = $image[0]->getUrl();
+        return $url;
+    }
+
+
 
 }

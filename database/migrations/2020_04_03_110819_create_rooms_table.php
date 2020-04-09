@@ -15,6 +15,7 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('hotel_id');
             $table->unsignedInteger('block_id');
             $table->unsignedInteger('room_type_id');
             $table->integer('floor');
@@ -25,9 +26,9 @@ class CreateRoomsTable extends Migration
         });
 
         Schema::table('rooms', function ($table) {
+            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('set null');
             $table->foreign('block_id')->references('id')->on('blocks')->onDelete('set null');
             $table->foreign('room_type_id')->references('id')->on('room__types')->onDelete('set null');
-
         });
     }
 

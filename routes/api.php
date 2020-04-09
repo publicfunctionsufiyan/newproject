@@ -23,13 +23,15 @@ Route::post('register', 'RegisterController@create');
 
 // User Routes
 Route::post('profile-picture/{id}', 'UserController@profilePicture'); 
+Route::get('get-media/{id}', 'UserController@getimage'); 
+
 Route::post('update-user/{id}', 'UserController@update');
 Route::delete('delete-user/{id}', 'UserController@deleteUser');
 Route::get('show-all-users', 'UserController@showAllUsers');
 Route::get('show-user-by-id/{id}', 'UserController@showUserById');
 
 //Hotel Routes
-Route::post('create-hotel', 'HotelController@create');
+Route::post('create-hotel', 'HotelController@create')->name('create-hotel');
 Route::post('add-image/{id}', 'HotelController@addimage');
 Route::post('update-hotel-details/{id}', 'HotelController@updateHoteldetails');
 Route::delete('delete-hotel/{id}', 'HotelController@deleteHotel');

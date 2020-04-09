@@ -21,12 +21,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
-
         
-
+    
         // create roles
-
-        
         $role = Role::updateOrCreate(['name' => 'admin']);
 
         $role = Role::updateOrCreate(['name' => 'user']);

@@ -16,7 +16,8 @@ class HotelController extends Controller
     {
         $input = $request->all();
         $hotel = Hotel::create($input);
-        return response()->json(['success' => true], 200);
+        // return response()->json(['success' => true], 200);
+        return redirect('admin-hotels');
     }
 
     public function updateHoteldetails(Request $request, $id)

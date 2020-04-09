@@ -32,12 +32,17 @@ Route::get('/', function () {
 
 
 
-Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('hotel', function() {
+
+Route::get('hotels', function() {
     $hotel = Hotel::all();
     return view('hotels')->with('hotels',$hotel);
-})->name('hotel');
+})->name('hotels');
+
+Route::get('rooms', function() {
+    
+    return view('rooms');
+})->name('rooms');
 
 Route::get('login','LoginController@loginForm')->name('login');
 Route::post('login', 'LoginController@login');
@@ -47,11 +52,18 @@ Route::post('logout','LoginController@logout')->name('logout');
 Route::get('register', 'RegisterController@registrationForm')->name('register');
 Route::post('register', 'RegisterController@create');
 
+Route::post('create-hotel', 'HotelController@create');
+
 
 //ADMIN
 Route::get('welcome-admin', function () {
+    
     return view('admin');
-})->name('welcome-admin');
+})->name('welcome-admin')->middleware('role:admin');
+
+Route::get('admin-setting', function () {
+    return view('admin.setting');
+})->name('admin-setting');
 
 Route::get('admin-hotels', function () {
     $hotel = Hotel::all();

@@ -29,11 +29,11 @@ class LoginController extends Controller
             if($user['user_type']==0)
             {
                 
-                return view('admin');
+                return redirect('welcome-admin');
             }
             else
             {
-                return redirect('home');
+                return redirect('/');
             }
 
             return response()->json(['success' => $success], 200);
