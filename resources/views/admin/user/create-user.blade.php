@@ -347,31 +347,30 @@
           
           
           
-          <form>
+          <form method="POST" action="{{ route('add-User') }}">
                 
                 <div class="form-group input-group">
-              <select class="form-control">
-                <option selected="">User type</option>
-                <option>User</option>
-                <option>Owner</option>
-                <option>Admin</option>
+              <select class="form-control" name="user_type">
+                <option value="0">Admin</option>
+                <option value="1">User</option>
+                <option value="2">Owner</option>
               </select>
                 </div>
                 
                 <div class="form-group input-group">
-                  <input name="" class="form-control" placeholder="Name" type="text">
+                  <input name="name" class="form-control" placeholder="Name" type="text">
                   </div> 
                   
                   <div class="form-group input-group">
-                  <input name="" class="form-control" placeholder="Email" type="email">
+                  <input name="email" class="form-control" placeholder="Email" type="email">
                   </div> 
                   
                   <div class="form-group input-group">
-                  <input class="form-control" placeholder="Password" type="password">
+                  <input name="password" class="form-control" placeholder="Password" type="password">
                   </div> 
                   
                   <div class="form-group input-group">
-                  <input class="form-control" placeholder="Confirm Password" type="password">
+                  <input name="password_confirmation" class="form-control" placeholder="Confirm Password" type="password">
                   </div> 
                   
                   <div class="form-group">

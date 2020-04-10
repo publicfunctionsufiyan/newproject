@@ -25,6 +25,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 <style>
@@ -335,6 +337,7 @@
         <div class="container-fluid">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Create Booking</h1>
+
             <a href="{{ url('admin-bookings') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">View All</a>
           </div>
           <div class="container"> 
@@ -347,10 +350,9 @@
           
           
           
-            <form>
+            <form method="POST" action="{{ route('create-booking') }}">
             
-
-
+            @csrf
             <div class="form-group input-group">
             <select class="form-control" name="hotel_id">
             @foreach ($hotel as $row)
@@ -363,14 +365,15 @@
 
             
 
-              
+              <div class="form-group input-group">
+                <input name="user_id" class="form-control" type="hidden" value="{{ Auth::user()->id }}">
+                </div>
 
                 <div class="form-group input-group">
-                <input name="from" class="form-control" placeholder="From" type="date">
+                <input name="from" class="form-control" placeholder="YYYY/MM/DD" type="date">
                 </div>
-                
                 <div class="form-group input-group">
-                <input name="to" class="form-control" placeholder="To" type="date">
+                <input name="to" class="form-control" placeholder="YYYY/MM/DD" type="date">
                 </div> 
                 <div class="form-group input-group">
                 <input name="capacity" class="form-control" placeholder="Capacity" type="text">

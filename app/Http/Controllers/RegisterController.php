@@ -41,11 +41,8 @@ class RegisterController extends Controller
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
 
-        if ($user->user_type == 0) $user->assignRole('admin');
         if ($user->user_type == 1) $user->assignRole('user');
-        if ($user->user_type == 2) $user->assignRole('owner');
-
-
+        
         $registered['token'] = $user->createToken('Laravel Password Grant Client')->accessToken;
         $registered['user'] = $user;
         
@@ -57,6 +54,25 @@ class RegisterController extends Controller
         $success['user'] = $user;
         return redirect('/');
         
+    }
+
+    public function addUser(Request $request)
+    {
+        $validator = Validator::make($request->all(), ['name' => 'required', 'email' => 'required|email', 'password' => 'required|confirmed|min:8']);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $input = $request->all();
+        $input['password'] = bcrypt($input['password']);
+        $user = User::create($input);
+
+        if ($user->user_type == 0) $user->assignRole('admin');
+        if ($user->user_type == 1) $user->assignRole('user');
+        if ($user->user_type == 2) $user->assignRole('owner');
+
+        return redirect('admin-users');
+
     }
 
 }

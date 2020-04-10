@@ -20,6 +20,8 @@ Route::get('welcome-admin', function () {
 
 Route::post('login', 'LoginController@login');
 Route::post('register', 'RegisterController@create');
+Route::post('add-User', 'RegisterController@addUser')->name('add-User');
+
 Route::post('create-User', 'RegisterController@createUser')->name('create-User');
 
 // User Routes
@@ -71,6 +73,7 @@ Route::get('show-all-room-types','RoomController@showAllRoomTypes');
 Route::get('show-room-type-by-id/{id}','RoomController@showRoomTypeById');
 
 //Booking Routes
+
 Route::post('create-booking','BookingController@create')->name('create-booking');
 Route::post('update-booking/{id}','BookingController@updateBooking');
 Route::delete('delete-booking/{id}','BookingController@deleteBooking');

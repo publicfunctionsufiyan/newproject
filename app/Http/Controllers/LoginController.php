@@ -28,16 +28,16 @@ class LoginController extends Controller
             $success['user'] = $user;
             if($user['user_type']==0)
             {
-            return response()->json(['success' => $success], 200);
+            
                 
-                // return redirect('welcome-admin');
+                return redirect('welcome-admin');
             }
             else
             {
                 return redirect('/');
             }
 
-            return response()->json(['success' => $success], 200);
+          
         }
         else {
         return response()->json(['error' => 'Unauthorised'], 401);

@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Booking;
 
+
+
 class BookingController extends Controller
 {
     public function create(Request $request)
     {
+        
         $input = $request->all();
         $booking = Booking::create($input);
-        return response()->json(['success' => true], 200);
+        // return response()->json(['success' => true], 200);
+        return redirect('admin-bookings');
+
     }
 
     public function updateBooking(Request $request, $id)
