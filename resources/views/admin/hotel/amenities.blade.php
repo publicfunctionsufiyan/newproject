@@ -65,7 +65,7 @@
       <a class="collapse-item" href="{{ url('admin-amenities') }}">Hotel Amenities</a>
       <a class="collapse-item" href="{{ url('admin-blocks') }}">Blocks</a>
       <a class="collapse-item" href="{{ url('admin-rooms') }}">Rooms</a>
-      <a class="collapse-item" href="{{ url('admin-room-types') }}">Room Types</a>
+      
 
 
     </div>

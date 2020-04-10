@@ -65,7 +65,7 @@
       <a class="collapse-item" href="{{ url('admin-amenities') }}">Hotel Amenities</a>
       <a class="collapse-item" href="{{ url('admin-blocks') }}">Blocks</a>
       <a class="collapse-item" href="{{ url('admin-rooms') }}">Rooms</a>
-      <a class="collapse-item" href="{{ url('admin-room-types') }}">Room Types</a>
+     
 
 
     </div>
@@ -309,8 +309,11 @@
                   <thead>
                     <tr>
                       <th>Id</th>
+                      <th>Hotel</th>
                       <th>Block</th>
-                      <th>Room Type</th>
+                      <th>Type</th>
+                      <th>Size</th>
+                      <th>Beds</th>
                       <th>Floor</th>
                       <th>Price</th>
                       <th>Availablity</th>
@@ -320,9 +323,12 @@
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Id</th>
+                    <th>Id</th>
+                      <th>Hotel</th>
                       <th>Block</th>
-                      <th>Room Type</th>
+                      <th>Type</th>
+                      <th>Size</th>
+                      <th>Beds</th>
                       <th>Floor</th>
                       <th>Price</th>
                       <th>Availablity</th>
@@ -335,8 +341,11 @@
 
                    <tr>
                       <td>{{ $row->id }}</td>
+                      <td>{{ $row->hotel_id }}</td>
                       <td>{{ $row->block_id }}</td>
-                      <td>{{ $row->room_type_id }}</td>
+                      <td>{{ $row->type }}</td>
+                      <td>{{ $row->size }}</td>
+                      <td>{{ $row->beds }}</td>
                       <td>{{ $row->floor }}$</td>
                       <td>{{ $row->price }}</td>
                       <td>{{ $row->availablity }}</td>

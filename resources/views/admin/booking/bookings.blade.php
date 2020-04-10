@@ -65,7 +65,7 @@
       <a class="collapse-item" href="{{ url('admin-amenities') }}">Hotel Amenities</a>
       <a class="collapse-item" href="{{ url('admin-blocks') }}">Blocks</a>
       <a class="collapse-item" href="{{ url('admin-rooms') }}">Rooms</a>
-      <a class="collapse-item" href="{{ url('admin-room-types') }}">Room Types</a>
+      
 
 
     </div>
@@ -311,12 +311,12 @@
                       <th>Id</th>
                       <th>User</th>
                       <th>Hotel</th>
-                      <th>Room Type</th>
+                      <th>Room</th>
                       <th>Customer Name</th>
                       <th>From</th>
                       <th>To</th>
-                      <th>Adults</th>
-                      <th>Children</th>
+                      <th>Capacity</th>
+                      
                       <th>Rooms</th>
 
 
@@ -329,13 +329,13 @@
                     <th>Id</th>
                       <th>User</th>
                       <th>Hotel</th>
-                      <th>Room Type</th>
+                      <th>Room</th>
                       <th>Customer Name</th>
                       <th>From</th>
                       <th>To</th>
                       <th>Adults</th>
-                      <th>Children</th>
-                      <th>Rooms</th>
+                      <th>Capacity</th>
+                      
                       <th>Edit</th>
                     <th>Delete</th>
                     </tr>
@@ -350,6 +350,9 @@
                       <td>{{ $row->customer_name }}</td>
                       <th>{{ $row->from }}</th>
                       <th>{{ $row->to }}</th>
+                      <th>{{ $row->capacity }}</th>
+                      <th>{{ $row->rooms }}</th>
+
                       <td width="5%"><i class="fas fa-edit text-gray-300" data-toggle="modal" data-target="#exampleModalCenter"></i></td>
                       <td width="5%"><i class="fas fa-trash text-gray-300"></i></td>
 

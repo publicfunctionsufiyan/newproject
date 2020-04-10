@@ -30,19 +30,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-
-
-
-
 Route::get('hotels', function() {
     $hotel = Hotel::all();
     return view('hotels')->with('hotels',$hotel);
 })->name('hotels');
 
 Route::get('rooms', function() {
-    
-    return view('rooms');
+    $room = Room::all();
+    return view('rooms')->with('rooms',$room);
 })->name('rooms');
+
 
 Route::get('login','LoginController@loginForm')->name('login');
 Route::post('login', 'LoginController@login');
@@ -52,18 +49,19 @@ Route::post('logout','LoginController@logout')->name('logout');
 Route::get('register', 'RegisterController@registrationForm')->name('register');
 Route::post('register', 'RegisterController@create');
 
-Route::post('create-hotel', 'HotelController@create');
+
 
 
 //ADMIN
 Route::get('welcome-admin', function () {
-    
     return view('admin');
 })->name('welcome-admin')->middleware('role:admin');
 
 Route::get('admin-setting', function () {
     return view('admin.setting');
 })->name('admin-setting');
+
+
 
 Route::get('admin-hotels', function () {
     $hotel = Hotel::all();
@@ -73,6 +71,7 @@ Route::get('admin-hotels', function () {
 Route::get('admin-add-hotels', function () {
     return view('admin.hotel.create-hotel');
 })->name('admin-add-hotels');
+
 
 
 Route::get('admin-users', function () {
@@ -85,6 +84,7 @@ Route::get('admin-add-users', function () {
 })->name('admin-add-users');
 
 
+
 Route::get('admin-bookings', function () {
     $booking = Booking::all();
     return view('admin.booking.bookings')->with('booking',$booking);
@@ -93,6 +93,7 @@ Route::get('admin-bookings', function () {
 Route::get('admin-add-bookings', function () {
     return view('admin.booking.create-bookings');
 })->name('admin-add-bookings');
+
 
 
 Route::get('admin-blocks', function () {
@@ -105,6 +106,7 @@ Route::get('admin-add-blocks', function () {
 })->name('admin-add-blocks');
 
 
+
 Route::get('admin-rooms', function () {
     $room = Room::all();
     return view('admin.room.rooms')->with('room', $room);
@@ -114,15 +116,6 @@ Route::get('admin-add-rooms', function () {
     return view('admin.room.create-room');
 })->name('admin-add-rooms');
 
-
-Route::get('admin-room-types', function () {
-    $type = Room_Type::all();
-    return view('admin.room.room-types')->with('type', $type);
-})->name('admin-room-types');
-
-Route::get('admin-add-room-types', function () {
-    return view('admin.room.create-room-type');
-})->name('admin-add-room-types');
 
 
 Route::get('admin-amenities', function () {
