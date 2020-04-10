@@ -348,40 +348,37 @@
           
           
             <form>
+            
+
+
             <div class="form-group input-group">
-            <select class="form-control">
-              <option selected="">Hotel</option>
-              <option>Room 1</option>
+            <select class="form-control" name="hotel_id">
+            @foreach ($hotel as $row)
+              
+              <option value="{{ $row->id  }}">{{ $row->id  }}</option>
+              @endforeach
             </select>
               </div>
-              <div class="form-group input-group">
-            <select class="form-control">
-              <option selected="">Room Type</option>
-              <option>Room 1</option>
-            </select>
-              </div>
+              
+
+            
 
               
-              <div class="form-group input-group">
-                <input name="Customer-Name" class="form-control" placeholder="Customer Name" type="text">
-                </div> 
 
                 <div class="form-group input-group">
-                <input name="From" class="form-control" placeholder="From" type="date">
+                <input name="from" class="form-control" placeholder="From" type="date">
                 </div>
                 
                 <div class="form-group input-group">
-                <input name="To" class="form-control" placeholder="To" type="date">
-                </div> 
-                <div class="form-group input-group">
-                <input name="capacity" class="form-control" placeholder="Capacity" type="text">
+                <input name="to" class="form-control" placeholder="To" type="date">
                 </div> 
                 <div class="form-group input-group">
                 <input name="capacity" class="form-control" placeholder="Capacity" type="text">
                 </div> 
                 
+                
                 <div class="form-group input-group">
-                <input name="Rooms" class="form-control" placeholder="Rooms" type="text">
+                <input name="rooms" class="form-control" placeholder="Rooms" type="text">
                 </div> 
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block"> Create </button>

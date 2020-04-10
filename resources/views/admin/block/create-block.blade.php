@@ -12,7 +12,7 @@
   <title>SB Admin 2 - Tables</title>
 
   <!-- Custom fonts for this template -->
-  <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
@@ -21,44 +21,6 @@
   <!-- Custom styles for this page -->
   <link href="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css') }}" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-
-<style>
-.divider-text {
-    position: relative;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.divider-text span {
-    padding: 7px;
-    font-size: 12px;
-    position: relative;   
-    z-index: 2;
-}
-.divider-text:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-    top: 55%;
-    left: 0;
-    z-index: 1;
-}
-
-.btn-facebook {
-    background-color: #405D9D;
-    color: #fff;
-}
-.btn-twitter {
-    background-color: #42AEEC;
-    color: #fff;
-}
-</style>
 </head>
 
 <body id="page-top">
@@ -66,11 +28,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    
-      <!-- Sidebar -->
-      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-        <!-- Sidebar -->
+       <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
@@ -138,7 +96,6 @@
 
 </ul>
 <!-- End of Sidebar -->
-
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -338,7 +295,7 @@
         <div class="container-fluid">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Create Block</h1>
-            <a href="{{ url('admin-blocks') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">View All</a>
+            <a href="{{ url('admin-bookings') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">View All</a>
           </div>
           <div class="container"> 
 
@@ -350,37 +307,66 @@
           
           
           
-          <form>
-                
+            <form method="POST" action="{{ route('create-block') }}">
+           
+            @csrf
+
+            <div class="form-group input-group">
+            <select class="form-control" name="hotel_id">
+            @foreach ($hotels as $row)
+              <option value="{{ $row->id }}">{{ $row->id }}</option>
+              @endforeach
+            </select>
+              </div>
+
+            
+
+              
+              <div class="form-group input-group">
+                <input name="name" class="form-control" placeholder="Name" type="text">
+                </div> 
+
                 <div class="form-group input-group">
-              <select class="form-control">
-                <option selected="">Hotel</option>
-                <option>Hotel 1</option>
-                <option>Hotel 2</option>
-                <option>Hotel 3</option>
-              </select>
+                <input name="floors" class="form-control" placeholder="Floors" type="text">
                 </div>
                 
-                <div class="form-group input-group">
-                  <input name="Name" class="form-control" placeholder="Name" type="text">
+              
+                
+                
+                
+                
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block"> Create </button>
                   </div> 
-                  
-                  <div class="form-group input-group">
-                  <input name="Floors" class="form-control" placeholder="Floors" type="text">
-                  </div> 
-                  
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> Create </button>
-                    </div> 
-               
-          </form>
+                
+            
+             
+        </form>
           </article>
           </div> 
           </div> 
         
         </div>
         <!-- /.container-fluid -->
-
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
       <!-- End of Main Content -->
 

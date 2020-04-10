@@ -72,7 +72,10 @@ class HotelController extends Controller
     {
         $input = $request->all();
         $amenity = Amenity::create($input);
-        return response()->json(['success' => true], 200);
+        // return response()->json(['success' => true], 200);
+        return redirect('admin-amenities');
+
+
     }
 
     public function updateAmenity(Request $request, $id)
@@ -107,7 +110,9 @@ class HotelController extends Controller
     {
         $input = $request->all();
         $block = Block::create($input);
-        return response()->json(['success' => true], 200);
+        // return response()->json(['success' => true], 200);
+        return redirect('admin-blocks');
+
     }
 
     public function updateBlock(Request $request, $id)

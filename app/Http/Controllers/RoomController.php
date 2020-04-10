@@ -13,8 +13,8 @@ class RoomController extends Controller
     {
         $input = $request->all();
         $room = Room::create($input);
-        return response()->json(['success' => true], 200);
-        // return redirect('admin-rooms');
+        // return response()->json(['success' => true], 200);
+        return redirect('admin-rooms');
     }
 
     public function updateRoom(Request $request, $id)

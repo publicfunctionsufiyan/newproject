@@ -347,36 +347,53 @@
           
           
           
-          <form>
+          <form method="POST" action="{{ route('create-room') }}">
+            @csrf
                 
                 <div class="form-group input-group">
-              <select class="form-control">
-                <option selected="">Block</option>
-                <option>Block 1</option>
-                <option>Block 2</option>
-                <option>Block 3</option>
+              <select class="form-control" name="hotel_id">
+            @foreach ($hotel as $row)
+
+                <option value="{{ $row->id }}">{{ $row->id }}</option>
+                @endforeach
               </select>
                 </div>
                 
                 <div class="form-group input-group">
-                  <select class="form-control">
-                    <option selected="">Room Type</option>
-                    <option>Type 1</option>
-                    <option>Type 2</option>
-                    <option>Type 3</option>
-                  </select>
-                    </div>
+              <select class="form-control" name="block_id">
+            @foreach ($block as $row)
+
+                <option value="{{ $row->id }}">{{ $row->id }}</option>
+                @endforeach
+              </select>
+                </div>
 
                 <div class="form-group input-group">
-                  <input name="Floor" class="form-control" placeholder="Floor" type="text">
+                  <input name="type" class="form-control" placeholder="Type" type="text">
+                  </div> 
+
+                  <div class="form-group input-group">
+                  <input name="description" class="form-control" placeholder="Description" type="text">
+                  </div> 
+
+                  <div class="form-group input-group">
+                  <input name="size" class="form-control" placeholder="Size" type="text">
+                  </div> 
+
+                  <div class="form-group input-group">
+                  <input name="beds" class="form-control" placeholder="Beds" type="text">
+                  </div> 
+
+                <div class="form-group input-group">
+                  <input name="floor" class="form-control" placeholder="Floor" type="text">
                   </div> 
                   
                   <div class="form-group input-group">
-                  <input name="Price" class="form-control" placeholder="Price" type="text">
+                  <input name="price" class="form-control" placeholder="Price" type="text">
                   </div> 
                   
                   <div class="form-group input-group">
-                  <input name="Availablity" class="form-control" placeholder="Availablity" type="text">
+                  <input name="availablity" class="form-control" placeholder="Availablity" type="text">
                   </div> 
                   
     

@@ -347,10 +347,11 @@
           
           
           
-            <form>
+            <form method="POST" action="{{ route('create-amenity') }}">
+      @csrf
                 
               <div class="form-group input-group">
-                <input name="Name" class="form-control" placeholder="Name" type="text">
+                <input name="name" class="form-control" placeholder="Name" type="text">
                 </div> 
 
                

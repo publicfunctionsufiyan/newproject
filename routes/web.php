@@ -95,7 +95,8 @@ Route::get('admin-bookings', function () {
 })->name('admin-bookings');
 
 Route::get('admin-add-bookings', function () {
-    return view('admin.booking.create-bookings');
+    $hotel = Hotel::all();
+    return view('admin.booking.create-bookings')->with('hotel', $hotel);
 })->name('admin-add-bookings');
 
 
@@ -106,7 +107,8 @@ Route::get('admin-blocks', function () {
 })->name('admin-blocks');
 
 Route::get('admin-add-blocks', function () {
-    return view('admin.block.create-block');
+    $hotel = Hotel::all();
+    return view('admin.block.create-block')->with('hotels',$hotel);
 })->name('admin-add-blocks');
 
 
@@ -117,7 +119,10 @@ Route::get('admin-rooms', function () {
 })->name('admin-rooms');
 
 Route::get('admin-add-rooms', function () {
-    return view('admin.room.create-room');
+    $hotel = Hotel::all();
+    $block = Block::all();
+    
+    return view('admin.room.create-room')->with('hotel',$hotel)->with('block',$block);
 })->name('admin-add-rooms');
 
 

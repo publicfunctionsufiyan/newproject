@@ -89,6 +89,10 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
+        <li>
+        
+         <a href="#" data-toggle="modal" data-target="#exampleModalCenter">BOOK NOW</a>
+     </li>
         <li><a href="{{ url('/') }}">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="{{ url('hotels') }}">Hotels</a></li>
@@ -101,6 +105,41 @@
 
     </div>
   </header><!-- End Header -->
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Check Availability</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+      <form method="POST">
+      
+      <label for="cars">From :</label>
+        <input type="date" class="form-group input-group">
+
+      <label for="cars">To :</label>
+        <input type="date" class="form-group input-group">
+        
+
+      <label for="cars">Capacity :</label>
+        <input type="number" class="form-group input-group">
+
+        
+      <label for="cars">Rooms :</label>
+        <input type="number" class="form-group input-group">
+        </form>
+
+
+      </div>
+   
+    </div>
+  </div>
+</div>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">

@@ -310,9 +310,9 @@
                     <tr>
                     <th>Id</th>
                      <th>Hotel</th>
-                     <th>Room</th>
+                     
                       <th>User</th>
-                      <th>Customer Name</th>
+                      
                       <th>From</th>
                       <th>To</th>
                       <th>Capacity</th>
@@ -325,9 +325,9 @@
                     <tr>
                      <th>Id</th>
                      <th>Hotel</th>
-                     <th>Room</th>
+                     
                       <th>User</th>
-                      <th>Customer Name</th>
+                      
                       <th>From</th>
                       <th>To</th>
                       <th>Capacity</th>
@@ -342,9 +342,9 @@
                    <tr>
                       <td>{{ $row->id }}</td>
                       <td>{{ $row->hotel_id }}</td>
-                      <td>{{ $row->room_id }}</td>
+                      
                       <td>{{ $row->user_id }}</td>
-                      <td>{{ $row->customer_name }}</td>
+                     
                       <th>{{ $row->from }}</th>
                       <th>{{ $row->to }}</th>
                       <th>{{ $row->capacity }}</th>

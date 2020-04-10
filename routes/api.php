@@ -41,14 +41,14 @@ Route::get('show-all-hotels', 'HotelController@showAllHotels');
 Route::get('show-hotel-by-id/{id}', 'HotelController@showHotelById');
 
 //Amenity Routes
-Route::post('create-amenity','HotelController@createAmenity');
+Route::post('create-amenity','HotelController@createAmenity')->name('create-amenity');
 Route::post('update-amenity/{id}','HotelController@updateAmenity');
 Route::delete('delete-amenity/{id}','HotelController@deleteAmenity');
 Route::get('show-all-amenities','HotelController@showAllAmenitys');
 Route::get('show-amenity-by-id/{id}','HotelController@showAmenityById');
 
 //Block Routes
-Route::post('create-block','HotelController@createBlock');
+Route::post('create-block','HotelController@createBlock')->name('create-block');
 Route::post('update-block/{id}','HotelController@updateBlock');
 Route::delete('delete-block/{id}','HotelController@deleteBlock');
 Route::get('show-all-blocks','HotelController@showAllBlocks');
@@ -56,7 +56,7 @@ Route::get('show-block-by-id/{id}','HotelController@showBlockById');
 Route::get('show-block-by-hotel/{id}','HotelController@showBlockByHotel');
 
 //Room Routes
-Route::post('create-room','RoomController@create');
+Route::post('create-room','RoomController@create')->name('create-room');
 Route::post('update-room/{id}','RoomController@updateRoom');
 Route::delete('delete-room/{id}','RoomController@deleteRoom');
 Route::get('show-all-rooms','RoomController@showAllRooms');
@@ -71,7 +71,7 @@ Route::get('show-all-room-types','RoomController@showAllRoomTypes');
 Route::get('show-room-type-by-id/{id}','RoomController@showRoomTypeById');
 
 //Booking Routes
-Route::post('create-booking','BookingController@create');
+Route::post('create-booking','BookingController@create')->name('create-booking');
 Route::post('update-booking/{id}','BookingController@updateBooking');
 Route::delete('delete-booking/{id}','BookingController@deleteBooking');
 Route::get('show-all-bookings','BookingController@showAllBookings');
