@@ -37,8 +37,12 @@ Route::get('hotels', function() {
 
 Route::get('rooms', function() {
     $room = Room::all();
-    return view('rooms')->with('rooms',$room);
+    return view('rooms')->with('room',$room);
 })->name('rooms');
+
+Route::get('my-bookings', function() {
+    return view('mybookings');
+})->name('my-bookings');
 
 
 Route::get('login','LoginController@loginForm')->name('login');

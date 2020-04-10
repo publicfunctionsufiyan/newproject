@@ -41,9 +41,7 @@ class RegisterController extends Controller
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
 
-        if ($user->user_type == 0) $user->assignRole('admin');
         if ($user->user_type == 1) $user->assignRole('user');
-        if ($user->user_type == 2) $user->assignRole('owner');
 
         $registered['token'] = $user->createToken('Laravel Password Grant Client')->accessToken;
         $registered['user'] = $user;
@@ -54,11 +52,8 @@ class RegisterController extends Controller
         $success['token'] = $user->createToken('Laravel Password Grant Client')->accessToken;
         unset($user->password);
         $success['user'] = $user;
-
-        // return response()->json(['success' => $success], 200);
         return redirect('/');
         
     }
 
-    
 }

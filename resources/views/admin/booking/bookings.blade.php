@@ -308,34 +308,30 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Id</th>
+                    <th>Id</th>
+                     <th>Hotel</th>
+                     <th>Room</th>
                       <th>User</th>
-                      <th>Hotel</th>
-                      <th>Room</th>
                       <th>Customer Name</th>
                       <th>From</th>
                       <th>To</th>
                       <th>Capacity</th>
-                      
                       <th>Rooms</th>
-
-
                       <th>Edit</th>
                     <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                    <th>Id</th>
+                     <th>Id</th>
+                     <th>Hotel</th>
+                     <th>Room</th>
                       <th>User</th>
-                      <th>Hotel</th>
-                      <th>Room</th>
                       <th>Customer Name</th>
                       <th>From</th>
                       <th>To</th>
-                      <th>Adults</th>
                       <th>Capacity</th>
-                      
+                      <th>Rooms</th>
                       <th>Edit</th>
                     <th>Delete</th>
                     </tr>
@@ -345,8 +341,9 @@
 
                    <tr>
                       <td>{{ $row->id }}</td>
-                      <td>{{ $row->user_id }}</td>
+                      <td>{{ $row->hotel_id }}</td>
                       <td>{{ $row->room_id }}</td>
+                      <td>{{ $row->user_id }}</td>
                       <td>{{ $row->customer_name }}</td>
                       <th>{{ $row->from }}</th>
                       <th>{{ $row->to }}</th>

@@ -20,6 +20,7 @@ Route::get('welcome-admin', function () {
 
 Route::post('login', 'LoginController@login');
 Route::post('register', 'RegisterController@create');
+Route::post('create-User', 'RegisterController@createUser')->name('create-User');
 
 // User Routes
 Route::post('profile-picture/{id}', 'UserController@profilePicture'); 
@@ -35,7 +36,6 @@ Route::post('create-hotel', 'HotelController@create')->name('create-hotel');
 Route::post('add-image/{id}', 'HotelController@addimage');
 Route::post('update-hotel-details/{id}', 'HotelController@updateHoteldetails');
 Route::delete('delete-hotel/{id}', 'HotelController@deleteHotel');
-// Route::delete('delete-hotel-image/{id}', 'HotelController@deleteHotelImage');
 Route::delete('delete-all-hotel-images/{id}', 'HotelController@deleteAllHotelImages');
 Route::get('show-all-hotels', 'HotelController@showAllHotels');
 Route::get('show-hotel-by-id/{id}', 'HotelController@showHotelById');

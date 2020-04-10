@@ -54,7 +54,25 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <ul>
-                  <li>  <li> <a href="{{ route('logout') }}"
+                                
+                                @if(Auth::user()->user_type == 0)
+                              
+                                  <li>
+                             <a href="{{ url('welcome-admin') }}">Admin Panel</a>
+                                </li>
+                                @elseif(Auth::user()->user_type == 1)
+                                
+                                  <li>
+                             <a href="#">My Booking</a>
+                                </li>
+
+                            @endif
+
+                            
+                           
+
+
+                    <li> <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Logout
@@ -63,13 +81,13 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                    </li></li>
+                                    </li>
                   </ul>
                              </li>
                            
                         @endguest
-            
-      <!-- .nav-menu -->
+                    </ul>
+      </nav>
     </div>
   </header><!-- End Header -->
 

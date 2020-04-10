@@ -54,7 +54,25 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <ul>
-                  <li>  <li> <a href="{{ route('logout') }}"
+                                
+                                @if(Auth::user()->user_type == 0)
+                              
+                                  <li>
+                             <a href="{{ url('welcome-admin') }}">Admin Panel</a>
+                                </li>
+                                @elseif(Auth::user()->user_type == 1)
+                                
+                                  <li>
+                             <a href="#">My Booking</a>
+                                </li>
+
+                            @endif
+
+                            
+                           
+
+
+                    <li> <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Logout
@@ -63,13 +81,13 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                    </li></li>
+                                    </li>
                   </ul>
                              </li>
                            
                         @endguest
-            
-      <!-- .nav-menu -->
+                    </ul>
+      </nav>
     </div>
   </header><!-- End Header -->
 
@@ -81,6 +99,7 @@
     <!-- Rooms Section Begin -->
     <section class="room-section spad">
         <div class="container">
+        @foreach ($room as $row)
        
            
             <div class="rooms-page-item">
@@ -102,10 +121,10 @@
                     <div class="col-lg-6">
                         <div class="room-text">
                             <div class="room-title">
-                                <h2>Double Suite</h2>
+                                <h2>{{ $row->type }}</h2>
                                 <div class="room-price">
                                 <div class="room-price">
-                                    <h2>$100</h2>
+                                    <h2>${{ $row->price }}</h2>
                                     <sub>/night</sub>
                                 </div>
                                     
@@ -114,11 +133,12 @@
                             </div>
 
                             <div class="room-desc">
-                                <p>The double suite has 2 double beds and a sleeper sofa with small kitchenette.</p>
+                                <p>Ratings :</p>
                             </div>
                             
                            
-                           
+                           </br>
+                           </br>
 
                             
                             
@@ -128,12 +148,12 @@
                                 <div class="room-info">
                                     
                                     <span>Size</span>
-                                    <p>325 sq. ft.</p>
+                                    <p>{{ $row->size }} sq. ft.</p>
                                 </div>
                                 <div class="room-info">
                                     
                                     <span>Beds</span>
-                                    <p>2 double</p>
+                                    <p>{{ $row->beds }}</p>
 
                                 </div>
                                 
@@ -146,6 +166,7 @@
                 </div>
             </div>
           
+            @endforeach
 
         </div>
     </section>
@@ -194,11 +215,9 @@
                 <input name="To" class="form-control" placeholder="To" type="date">
                 </div> 
                 <div class="form-group input-group">
-                <input name="Adults" class="form-control" placeholder="Adults" type="text">
+                <input name="capacity" class="form-control" placeholder="Adults" type="text">
                 </div> 
-                <div class="form-group input-group">
-                <input name="Children" class="form-control" placeholder="Children" type="text">
-                </div> 
+                
                 <div class="form-group input-group">
                 <input name="Rooms" class="form-control" placeholder="Rooms" type="text">
                 </div> 
