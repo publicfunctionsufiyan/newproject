@@ -8,6 +8,11 @@ use App\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use \Spatie\Permission\Traits\HasRoles;
+use App\Hotel;
+use App\Room;
+use App\Block;
+use App\Booking;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,6 +34,21 @@ class DatabaseSeeder extends Seeder
         $role = Role::updateOrCreate(['name' => 'user']);
 
         $role = Role::updateOrCreate(['name' => 'owner']);   
+
+
+        $hotel = Hotel::updateOrCreate(['name' => 'Marriot', 'address' => 'Karachi, Pakistan',
+        'rating' => '3', 'blocks' => '2', 'let' => '24.5689', 'long' => '40.6895', 'zoom' => '12']);  
+        
+        $room = Room::updateOrCreate(['hotel_id' => '1', 'block_id' => '1', 'type' => 'Family', 'description' => 'Description here...',
+        'size' => '425', 'beds' => '2 Double', 'floor' => '3', 'price' => '100', 'availablity' => '1']); 
+
+        $block = Block::updateOrCreate(['hotel_id' => '1', 'name' => 'A', 'floors' => '10']);
+
+        $booking = Booking::updateOrCreate(['hotel_id' => '1', 'user_id' => '1', 
+        'from' => '2020/01/01', 'to' => '2020/02/20', 'capacity' => '4', 'rooms' => '1']);   
+
+
+
 
     }
 }

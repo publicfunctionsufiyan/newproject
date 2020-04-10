@@ -18,6 +18,7 @@ class CreateRoomsTable extends Migration
             $table->unsignedInteger('hotel_id');
             $table->unsignedInteger('block_id');
             $table->string('type');
+            $table->string('description');
             $table->string('size');
             $table->string('beds');
             $table->integer('floor');

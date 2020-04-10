@@ -16,9 +16,7 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('hotel_id');
-            $table->unsignedInteger('room_id');
             $table->unsignedInteger('user_id');
-            $table->string('customer_name');
             $table->date('from');
             $table->date('to');
             $table->Integer('capacity');
@@ -28,7 +26,6 @@ class CreateBookingsTable extends Migration
 
         Schema::table('bookings', function ($table) {
             $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('set null');
-            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('set null');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
     }

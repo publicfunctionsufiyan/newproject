@@ -142,9 +142,10 @@
 
                             
                             
+                          </br>
                            
                             <div class="room-features">
-                                
+                              
                                 <div class="room-info">
                                     <i class="flaticon-029-wifi"></i>
                                     <span>Wi-fii</span>
@@ -162,7 +163,7 @@
                                     <span>Pool</span>
                                 </div>
                             </div>
-                            <button type="button" class="primary-btn">Rooms<i class="lnr lnr-arrow-right"></i></button>
+                          
 
                         </div>
                     </div>

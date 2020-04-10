@@ -35,7 +35,18 @@
   ======================================================== -->
 </head>
 <style>
-  input[type=search], select {
+  input[type=number], select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=date], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -45,6 +56,20 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+
+
   </style>
 <body>
 
@@ -122,12 +147,56 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>Let's start</h1>
-      <form method="POST">
-        <input type="search" placeholder="Search">
-      </form>
+      <h1 align="center">Let's start</h1>
+     
+      <div class="text-center">
+     
+      
+      <a href="#" class="btn-get-started scrollto" data-toggle="modal" data-target="#exampleModalCenter">BOOK NOW</a>
+
+</div>
+     
+      
+
     </div>
   </section><!-- End Hero -->
+
+  
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Check Availability</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+      <form method="POST">
+      
+      <label for="cars">From :</label>
+        <input type="date" class="form-group input-group">
+
+      <label for="cars">To :</label>
+        <input type="date" class="form-group input-group">
+        
+
+      <label for="cars">Capacity :</label>
+        <input type="number" class="form-group input-group">
+
+        
+      <label for="cars">Rooms :</label>
+        <input type="number" class="form-group input-group">
+        </form>
+
+
+      </div>
+   
+    </div>
+  </div>
+</div>
 
   <main id="main">
 

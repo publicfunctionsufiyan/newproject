@@ -133,6 +133,7 @@
                             </div>
 
                             <div class="room-desc">
+                                <p>{{ $row->description }}</p>
                                 <p>Ratings :</p>
                             </div>
                             
@@ -159,7 +160,7 @@
                                 
                               
                             </div>
-                            <button type="button" class="primary-btn" data-toggle="modal" data-target="#exampleModalCenter">Book Now<i class="lnr lnr-arrow-right"></i></button>
+                            
                             
                         </div>
                     </div>

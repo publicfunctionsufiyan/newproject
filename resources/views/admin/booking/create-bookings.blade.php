@@ -374,11 +374,12 @@
                 <input name="To" class="form-control" placeholder="To" type="date">
                 </div> 
                 <div class="form-group input-group">
-                <input name="Adults" class="form-control" placeholder="Adults" type="text">
+                <input name="capacity" class="form-control" placeholder="Capacity" type="text">
                 </div> 
                 <div class="form-group input-group">
-                <input name="Children" class="form-control" placeholder="Children" type="text">
+                <input name="capacity" class="form-control" placeholder="Capacity" type="text">
                 </div> 
+                
                 <div class="form-group input-group">
                 <input name="Rooms" class="form-control" placeholder="Rooms" type="text">
                 </div> 
