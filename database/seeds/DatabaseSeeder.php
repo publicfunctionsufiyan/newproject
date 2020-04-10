@@ -30,11 +30,5 @@ class DatabaseSeeder extends Seeder
 
         $role = Role::updateOrCreate(['name' => 'owner']);   
 
-        $user = User::Create(['user_type' => '0', 'name' => 'admin', 'email' => 'admin@gmail.com', 'password' => '12345678']);
-        
-        
-       
-        
-       
     }
 }
