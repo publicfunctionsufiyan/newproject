@@ -60,8 +60,10 @@ Route::post('register', 'RegisterController@create');
 Route::get('welcome-admin', function () {
     $user = User::all()->count();
     $booking = Booking::all()->count();
+    $hotel = Hotel::all()->count();
+    $room = Room::all()->count();
 
-    return view('admin')->with('user',$user)->with('booking', $booking);
+    return view('admin')->with('user',$user)->with('booking', $booking)->with('hotel', $hotel)->with('room', $room);
 })->name('welcome-admin')->middleware('role:admin');
 
 Route::get('admin-setting', function () {
