@@ -12,9 +12,14 @@ class Booking extends Model
         'hotel_id', 'room_id', 'user_id', 'customer_name', 'from', 'to', 'capacity', 'rooms'
     ];
 
-    public function rooms()
+    public function user()
     {
-    return $this->belongsTo('App\Room', 'room_id');
+    return $this->belongsTo('App\User', 'user_id');
+    }
+
+    public function hotel()
+    {
+    return $this->belongsTo('App\Hotel', 'hotel_id');
     }
 
 }

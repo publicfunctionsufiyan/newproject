@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Booking;
+use App\User;
+
 
 
 
@@ -42,6 +44,13 @@ class BookingController extends Controller
     public function showBookingById($id)
     {
         $booking = Booking::findOrFail($id);
+        return $booking;
+    }
+
+    public function showBookingByUser($id)
+    {
+        $user = User::find($id);
+        $booking = $user->bookings;
         return $booking;
     }
 }

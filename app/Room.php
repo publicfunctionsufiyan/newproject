@@ -15,15 +15,11 @@ class Room extends Model implements HasMedia
         'hotel_id', 'block_id', 'type', 'description', 'size', 'beds', 'floor','price', 'availablity'
     ];
 
-    public function bookings()
+    public function hotels()
     {
-        return $this->hasOne('App\Booking','room_id');
+    return $this->belongsTo('App\Hotel', 'hotel_id');
     }
 
-    public function room_types()
-    {
-    return $this->belongsTo('App\Room_Type', 'room_type_id');
-    }
 
     public function blocks()
     {

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Room;
+use App\Hotel;
+
 use App\Room_Type;
 
 use Illuminate\Http\Request;
@@ -45,7 +47,7 @@ class RoomController extends Controller
     public function showRoomByHotel($id)
     {
         $hotel = Hotel::find($id);
-        $room = $hotel->$room;
+        $room = $hotel->rooms;
         return $room;
     }
 

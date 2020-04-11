@@ -23,9 +23,21 @@ class Hotel extends Model implements HasMedia
         return $this->hasMany('App\Block','hotel_id');
     }
 
+    public function bookings()
+    {
+        return $this->hasMany('App\Booking','hotel_id');
+    }
+
+    public function rooms()
+    {
+        return $this->hasMany('App\Room','hotel_id');
+    }
+
     public function amenities()
     {
         return $this->belongsToMany('App\Amenity')->using('App\Hotel_Amenities');
     }
+
+
 }
 

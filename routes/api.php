@@ -65,13 +65,6 @@ Route::get('show-all-rooms','RoomController@showAllRooms');
 Route::get('show-room-by-id/{id}','RoomController@showRoomById');
 Route::get('show-room-by-hotel/{id}','RoomController@showRoomByHotel');
 
-//Room Type Routes
-Route::post('create-room-type','RoomController@createRoomType');
-Route::post('update-room-type/{id}','RoomController@updateRoomType');
-Route::delete('delete-room-type/{id}','RoomController@deleteRoomType');
-Route::get('show-all-room-types','RoomController@showAllRoomTypes');
-Route::get('show-room-type-by-id/{id}','RoomController@showRoomTypeById');
-
 //Booking Routes
 
 Route::post('create-booking','BookingController@create')->name('create-booking');
@@ -79,6 +72,8 @@ Route::post('update-booking/{id}','BookingController@updateBooking');
 Route::delete('delete-booking/{id}','BookingController@deleteBooking');
 Route::get('show-all-bookings','BookingController@showAllBookings');
 Route::get('show-booking-by-id/{id}','BookingController@showBookingById');
+Route::get('show-booking-by-user/{id}','BookingController@showBookingByUser');
+
 
 //Hotel Amenities Routes
 Route::post('create-hotel-amenities','HotelController@createHotelAmenities');

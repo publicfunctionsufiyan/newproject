@@ -48,6 +48,9 @@ class User extends Authenticatable implements HasMedia
         'email_verified_at' => 'datetime',
     ];
 
-    
+    public function bookings()
+    {
+        return $this->hasMany('App\Booking','user_id');
+    }
     
 }
