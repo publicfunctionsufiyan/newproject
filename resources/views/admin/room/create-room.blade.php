@@ -349,6 +349,7 @@
           
           <form method="POST" action="{{ route('create-room') }}">
             @csrf
+            <lable>Hotel Id :</lable>
                 
                 <div class="form-group input-group">
               <select class="form-control" name="hotel_id">
@@ -358,6 +359,9 @@
                 @endforeach
               </select>
                 </div>
+
+            <lable>Block Id :</lable>
+
                 
                 <div class="form-group input-group">
               <select class="form-control" name="block_id">

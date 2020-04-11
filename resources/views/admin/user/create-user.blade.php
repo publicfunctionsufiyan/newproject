@@ -349,6 +349,8 @@
           
           <form method="POST" action="{{ route('add-User') }}">
                 
+            <lable>Type :</lable>
+
                 <div class="form-group input-group">
               <select class="form-control" name="user_type">
                 <option value="0">Admin</option>

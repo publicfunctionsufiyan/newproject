@@ -18,6 +18,44 @@
     <link rel="stylesheet" href="{{ asset('user/hotel/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/style.css') }}" type="text/css">
+
+    <style>
+  
+
+  input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  </style>
 </head>
 
 <body>
@@ -35,6 +73,9 @@
      
       <form method="POST">
       
+      <label for="cars">Location</label>
+        <input type="text" class="form-group input-group">
+
       <label for="cars">From :</label>
         <input type="date" class="form-group input-group">
 
@@ -48,6 +89,10 @@
         
       <label for="cars">Rooms :</label>
         <input type="number" class="form-group input-group">
+
+        <button type="submit" class="btn btn-primary">
+      Find Hotels
+      </button>
         </form>
 
 

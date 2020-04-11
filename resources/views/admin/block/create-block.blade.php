@@ -310,6 +310,7 @@
             <form method="POST" action="{{ route('create-block') }}">
            
             @csrf
+            <lable>Hotel Id :</lable>
 
             <div class="form-group input-group">
             <select class="form-control" name="hotel_id">

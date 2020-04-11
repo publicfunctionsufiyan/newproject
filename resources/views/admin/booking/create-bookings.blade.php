@@ -353,6 +353,8 @@
             <form method="POST" action="{{ route('create-booking') }}">
             
             @csrf
+            <lable>Hotel Id :</lable>
+
             <div class="form-group input-group">
             <select class="form-control" name="hotel_id">
             @foreach ($hotel as $row)
