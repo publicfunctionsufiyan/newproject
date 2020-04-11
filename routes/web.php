@@ -58,7 +58,10 @@ Route::post('register', 'RegisterController@create');
 
 //ADMIN
 Route::get('welcome-admin', function () {
-    return view('admin');
+    $user = User::all()->count();
+    $booking = Booking::all()->count();
+
+    return view('admin')->with('user',$user)->with('booking', $booking);
 })->name('welcome-admin')->middleware('role:admin');
 
 Route::get('admin-setting', function () {
