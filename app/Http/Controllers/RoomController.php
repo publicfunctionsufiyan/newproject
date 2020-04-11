@@ -47,8 +47,9 @@ class RoomController extends Controller
     public function showRoomByHotel($id)
     {
         $hotel = Hotel::find($id);
-        $room = $hotel->rooms;
-        return $room;
+        $rooms = $hotel->rooms;
+        // return $room;
+        return view('rooms')->with('rooms',$rooms);
     }
 
 

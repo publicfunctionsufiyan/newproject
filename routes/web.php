@@ -35,10 +35,7 @@ Route::get('hotels', function() {
     return view('hotels')->with('hotels',$hotel);
 })->name('hotels');
 
-Route::get('rooms', function() {
-    $room = Room::all();
-    return view('rooms')->with('room',$room);
-})->name('rooms');
+Route::get('rooms/{id}', 'RoomController@showRoomByHotel')->name('rooms');
 
 Route::get('my-bookings', function() {
     return view('mybookings');

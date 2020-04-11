@@ -77,7 +77,7 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="{{ url('hotels') }}">Hotels</a></li>
-        <li><a href="{{ url('rooms') }}">Rooms</a></li>
+        
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -138,7 +138,7 @@
     <!-- Rooms Section Begin -->
     <section class="room-section spad">
         <div class="container">
-        @foreach ($room as $row)
+        @foreach ($rooms as $row)
        
            
             <div class="rooms-page-item">

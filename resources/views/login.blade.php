@@ -88,7 +88,7 @@
         <li><a href="{{ url('/') }}">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="{{ url('hotels') }}">Hotels</a></li>
-        <li><a href="{{ url('rooms') }}">Rooms</a></li>
+        
         <li><a href="#">Contact</a></li>
         <li><a href="{{ route('login') }}">Login</a></li>
         <li><a href="{{ route('register') }}">Register</a></li>

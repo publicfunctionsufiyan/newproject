@@ -77,7 +77,7 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="{{ url('hotels') }}">Hotels</a></li>
-        <li><a href="{{ url('rooms') }}">Rooms</a></li>
+        
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -205,7 +205,7 @@
                                     <span>Pool</span>
                                 </div>
                             </div>
-                          
+                          <h2><a href="{{ url('rooms', ['id' => $row->id]) }}">Rooms</a></h2>
 
                         </div>
                     </div>

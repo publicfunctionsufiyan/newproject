@@ -63,7 +63,7 @@ Route::post('update-room/{id}','RoomController@updateRoom');
 Route::delete('delete-room/{id}','RoomController@deleteRoom');
 Route::get('show-all-rooms','RoomController@showAllRooms');
 Route::get('show-room-by-id/{id}','RoomController@showRoomById');
-Route::get('show-room-by-hotel/{id}','RoomController@showRoomByHotel');
+// Route::get('show-room-by-hotel/{id}','RoomController@showRoomByHotel');
 
 //Booking Routes
 
