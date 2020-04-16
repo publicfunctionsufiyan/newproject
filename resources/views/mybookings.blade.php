@@ -35,8 +35,9 @@
   ======================================================== -->
 </head>
 <style>
-  input[type=search], select {
-    width: 100%;
+ 
+  input[type=number], select {
+    width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -45,12 +46,9 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
-
-  
-  
 
   input[type=date], select {
-    width: 100%;
+    width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -60,19 +58,10 @@
     box-sizing: border-box;
   }
 
-  input[type=number], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    opacity: 0.7;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+  
 
   input[type=text], select {
-    width: 100%;
+    width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -81,6 +70,46 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  input[type=email], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=password], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+
+  
+
+  
 
   
 
@@ -101,12 +130,9 @@
         <ul>
         <li>
         
-         <a href="#" data-toggle="modal" data-target="#exampleModalCenter">BOOK NOW</a>
+         <a href="#" data-toggle="modal" data-target="#bookNowModal">BOOK NOW</a>
      </li>
-        <li><a href="{{ url('/') }}">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="{{ url('hotels') }}">Hotels</a></li>
+        
         
                         @guest
                             <li class="nav-item">
@@ -162,61 +188,66 @@
     </div>
   </header><!-- End Header -->
 
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Check Availability</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-     
-      <form method="POST">
-      
-      <label for="cars">Location</label>
-        <input type="text" class="form-group input-group">
-
-      <label for="cars">From :</label>
-        <input type="date" class="form-group input-group">
-
-      <label for="cars">To :</label>
-        <input type="date" class="form-group input-group">
-        
-
-      <label for="cars">Capacity :</label>
-        <input type="number" class="form-group input-group">
-
-        
-      <label for="cars">Rooms :</label>
-        <input type="number" class="form-group input-group">
-
-        <button type="submit" class="btn btn-primary">
-      Find Hotels
-      </button>
-        </form>
-
-
-      </div>
-   
-    </div>
-  </div>
-</div>
+ 
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Let's start</h1>
-      <form method="POST">
-        <input type="search" placeholder="Search">
-      </form>
+      
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
 
+    <!-- Book now modal -->
+    <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="40px"></a>
+
+
+        
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      <div class="container text-center text-md-center">
+
+      <form> 
     
+      <input type="text" name="location" required placeholder="Location">
+      </br>
+      
+      <input type="date" name="from" required>
+      </br>
+
+      <input type="date" name="to" required>
+      </br>
+        
+
+      <input type="number"  name="capacity" required placeholder="Capacity">
+      </br>
+
+      <input type="number" name="rooms" required placeholder="Rooms">
+      </br>
+
+      <button type="submit" class="btn btn-primary">Find Hotels</button>
+      </form>
+
+      </div>
+
+      </div>
+   
+      </div>
+
+  </div>
+
+</div>
 
     <h1>MY BOOKINGS here........</h1>
     

@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::post('create-city','BookingController@createCity');
+
+
+
 Route::get('welcome-admin', function () {
     return view('admin');
 });

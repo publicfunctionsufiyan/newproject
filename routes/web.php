@@ -30,6 +30,13 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('view-map', function() {
+    $hotels = Hotel::all();
+    return view('view-map', compact('hotels'))->with('hotels',$hotels);
+})->name('view-map');
+
+
+
 Route::get('hotels', function() {
     $hotel = Hotel::all();
     return view('hotels')->with('hotels',$hotel);

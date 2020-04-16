@@ -5,12 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Booking;
 use App\User;
+use App\Cities;
 
 
 
 
 class BookingController extends Controller
 {
+
+    public function createCity(Request $request)
+    {
+        
+        $input = $request->all();
+        $cities = Cities::create($input);
+        return response()->json(['success' => true], 200);
+    }
+
     public function create(Request $request)
     {
         

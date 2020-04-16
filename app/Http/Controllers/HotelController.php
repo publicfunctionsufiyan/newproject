@@ -8,9 +8,11 @@ use App\Amenity;
 use App\Block;
 use App\Hotel_Amenities;
 use App\Media;
+use App\Cities;
 
 class HotelController extends Controller
 {   
+    
     // HOTEL FUNCTIONS
     public function create(Request $request)
     {

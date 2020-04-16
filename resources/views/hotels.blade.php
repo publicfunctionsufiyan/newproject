@@ -18,11 +18,21 @@
     <link rel="stylesheet" href="{{ asset('user/hotel/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/style.css') }}" type="text/css">
+   
     <style>
-  
+  input[type=number], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 
   input[type=date], select {
-    width: 100%;
+    width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -32,19 +42,10 @@
     box-sizing: border-box;
   }
 
-  input[type=number], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    opacity: 0.7;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+  
 
   input[type=text], select {
-    width: 100%;
+    width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -54,52 +55,52 @@
     box-sizing: border-box;
   }
 
+  input[type=email], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=password], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+
+  
+
   </style>
+
 </head>
 
 <body>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Check Availability</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-     
-      <form method="POST">
-      
-      <label for="cars">Location</label>
-        <input type="text" class="form-group input-group">
-
-      <label for="cars">From :</label>
-        <input type="date" class="form-group input-group">
-
-      <label for="cars">To :</label>
-        <input type="date" class="form-group input-group">
-        
-
-      <label for="cars">Capacity :</label>
-        <input type="number" class="form-group input-group">
-
-        
-      <label for="cars">Rooms :</label>
-        <input type="number" class="form-group input-group">
-
-        <button type="submit" class="btn btn-primary">
-      Find Hotels
-      </button>
-        </form>
 
 
-      </div>
-   
-    </div>
-  </div>
-</div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -115,20 +116,20 @@
         <ul>
         <li>
         
-         <a href="#" data-toggle="modal" data-target="#exampleModalCenter">BOOK NOW</a>
+         <a href="#" data-toggle="modal" data-target="#bookNowModal">BOOK NOW</a>
      </li>
-        <li><a href="{{ url('/') }}">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="{{ url('hotels') }}">Hotels</a></li>
+        
+     <li><a href="{{ url('hotels') }}">Hotels</a></li>
         
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            <a href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                <a href="#" data-toggle="modal" data-target="#registerModal">Register</a>
+
                                 </li>
                             @endif
                         @else
@@ -146,7 +147,7 @@
                                 @elseif(Auth::user()->user_type == 1)
                                 
                                   <li>
-                             <a href="#">My Booking</a>
+                             <a href="{{ route('my-bookings') }}">My Booking</a>
                                 </li>
 
                             @endif
@@ -179,7 +180,138 @@
 
 
  
+<!-- register modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="40px"></a>
 
+
+        
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+    <div class="container text-center text-md-center">
+
+    <h2>Create your account</h2>
+
+<form method="POST" action="{{ route('register') }}">
+@csrf
+  <input type="text" placeholder="Name" required name="name">
+</br>
+  <input type="email" placeholder="Email" required name="email">
+</br>
+  <input type="password" placeholder="Password" required name="password">
+</br>
+<input type="password" placeholder="Confirm Password" required name="password_confirmation">
+</br>
+<button type="submit" class="btn btn-primary">
+{{ __('Sign Up') }}
+</button>
+
+</form>
+</div>
+
+      </div>
+   
+    </div>
+  </div>
+</div>
+
+<!-- login modal -->
+
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="40px"></a>
+
+
+        
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+    <div class="container text-center text-md-center">
+
+      <h2>Sign in</h2>
+
+      <form method="POST" action="{{ route('login') }}">
+      @csrf
+
+        <input type="email" placeholder="Email" required name="email">
+      </br>
+        <input type="password" placeholder="Password" required name="password">
+      </br>
+      <button type="submit" class="btn btn-primary">
+                                    Sign In
+                                </button>
+      </form>
+</div>
+
+      </div>
+   
+    </div>
+  </div>
+</div>
+  
+<!-- Book now modal -->
+        <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="40px"></a>
+
+
+        
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      <div class="container text-center text-md-center">
+
+      <form> 
+    
+      <input type="text" name="location" required placeholder="Location">
+      </br>
+      
+      <input type="date" name="from" required>
+      </br>
+
+      <input type="date" name="to" required>
+      </br>
+        
+
+      <input type="number"  name="capacity" required placeholder="Capacity">
+      </br>
+
+      <input type="number" name="rooms" required placeholder="Rooms">
+      </br>
+
+      <button type="submit" class="btn btn-primary">Find Hotels</button>
+      </form>
+
+      </div>
+
+      </div>
+   
+      </div>
+
+  </div>
+
+</div>
 
   <main id="main">
     <!-- Rooms Section Begin -->
