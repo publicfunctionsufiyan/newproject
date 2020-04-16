@@ -36,8 +36,7 @@ class DatabaseSeeder extends Seeder
         $role = Role::updateOrCreate(['name' => 'owner']);   
 
 
-        $hotel = Hotel::updateOrCreate(['name' => 'Marriot', 'address' => 'Karachi, Pakistan',
-        'rating' => '3', 'blocks' => '2', 'let' => '24.5689', 'long' => '40.6895', 'zoom' => '12']);  
+        $hotel = Hotel::updateOrCreate(['name' => 'Marriot', 'address' => 'Karachi, Pakistan', 'blocks' => '2', 'let' => '24.5689', 'long' => '40.6895']);  
         
         $room = Room::updateOrCreate(['hotel_id' => '1', 'block_id' => '1', 'type' => 'Family', 'description' => 'Description here...',
         'size' => '425', 'beds' => '2 Double', 'floor' => '3', 'price' => '100', 'availablity' => '1']); 

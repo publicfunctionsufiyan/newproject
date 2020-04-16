@@ -144,7 +144,8 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-      <h1 class="text-light"><a href="{{ url('/') }}">book now</a></h1>
+      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logoMain.png') }}"></a> 
+      
 
         
       </div>

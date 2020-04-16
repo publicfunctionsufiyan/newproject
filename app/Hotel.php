@@ -38,6 +38,11 @@ class Hotel extends Model implements HasMedia
         return $this->belongsToMany('App\Amenity')->using('App\Hotel_Amenities');
     }
 
+    public function reviews()
+    {
+        return $this->hasMany('App\Review','hotel_id');
+    }
+
 
 }
 

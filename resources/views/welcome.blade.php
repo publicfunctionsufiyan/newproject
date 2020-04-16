@@ -116,7 +116,7 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logo.png') }}"></a> 
+        <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logoMain.png') }}"></a> 
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>

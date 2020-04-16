@@ -36,15 +36,16 @@
   <div class="sidebar-brand-icon rotate-n-15">
    
   </div>
-  <div class="sidebar-brand-text mx-3">Welcome Admin</div>
+  <img src="{{ asset('user/assets/img/logo.png') }}" width="70%">
+ 
 </a>
 
 
 
 <li class="nav-item active">
   <a class="nav-link" href="{{ url('welcome-admin') }}">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>Dashboard</span></a>
+  <span>Welcome Admin</span></a>
+
 </li>
 
 

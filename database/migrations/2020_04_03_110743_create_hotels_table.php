@@ -17,12 +17,9 @@ class CreateHotelsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->string('rating');
             $table->integer('blocks');
             $table->double('let');
             $table->double('long');
-            $table->integer('zoom');
-
             $table->timestamps();
         });
     }
