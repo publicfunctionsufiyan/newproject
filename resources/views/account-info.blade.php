@@ -18,36 +18,16 @@
     <link rel="stylesheet" href="{{ asset('user/hotel/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/style.css') }}" type="text/css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
    
     <style>
-  input[type=number], select {
-    width: 60%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    opacity: 0.7;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+  
 
-  input[type=date], select {
-    width: 60%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    opacity: 0.7;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+  
 
   
 
   input[type=text], select {
-    width: 60%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -57,25 +37,9 @@
     box-sizing: border-box;
   }
 
-  input[type=email], select {
-    width: 60%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+ 
 
-  input[type=password], select {
-    width: 60%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+ 
   
   input[type=submit] {
     width: 40%;
@@ -188,9 +152,10 @@
   </header><!-- End Header -->
 
 
- 
-<!-- register modal -->
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+ <!-- address modal -->
+
+
+ <div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -207,186 +172,75 @@
      
     <div class="container text-center text-md-center">
 
-    <h2>Create your account</h2>
-
-<form method="POST" action="{{ route('register') }}">
-@csrf
-  <input type="text" placeholder="Name" required name="name">
-</br>
-  <input type="email" placeholder="Email" required name="email">
-</br>
-  <input type="password" placeholder="Password" required name="password">
-</br>
-<input type="password" placeholder="Confirm Password" required name="password_confirmation">
-</br>
-<button type="submit" class="btn btn-primary">
-{{ __('Sign Up') }}
-</button>
-
-</form>
-</div>
-
-      </div>
-   
-    </div>
-  </div>
-</div>
-
-<!-- login modal -->
-
-
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="40px"></a>
-
-
-        
-        
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-     
-    <div class="container text-center text-md-center">
-
-      <h2>Sign in</h2>
-
-      <form method="POST" action="{{ route('login') }}">
-      @csrf
-
-        <input type="email" placeholder="Email" required name="email">
-      </br>
-        <input type="password" placeholder="Password" required name="password">
-      </br>
-      <button type="submit" class="btn btn-primary">
-                                    Sign In
-                                </button>
-      </form>
-</div>
-
-      </div>
-   
-    </div>
-  </div>
-</div>
-  
-<!-- Book now modal -->
-        <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="40px"></a>
-
-
-        
-        
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-      <div class="container text-center text-md-center">
-
-      <form> 
+      <h2>Address</h2>
+      <form method="POST" action="{{ route('user-contact', Auth::user()->id) }}">
+            <label>Street Address</lable>
+            </br>
+            <input type="text" class="form-control" name="address">
+            </br>
+            <label>City</lable>
+            </br>
+            <input type="text" class="form-control" name="city">
+            </br>
+            <label>State/Province/Region</lable>
+            </br>
+            <input type="text" class="form-control" name="state">
+            </br>
+            <label>Zip code/Postal code</lable>
+            </br>
+            <input type="text" class="form-control" name="postalcode">
+            </br>
+            <label>Country</lable>
+            </br>
+            <input type="text" class="form-control" name="country">
+            </br>
+            <label>Phone number</lable>
+            </br>
+            <input type="text" class="form-control" name="phone">
+            </br>
+            <button type="submit" class="btn btn-primary">Save</button>
+            </form>
     
-      <input type="text" name="location" required placeholder="Location">
-      </br>
-      
-      <input type="date" name="from" required>
-      </br>
-
-      <input type="date" name="to" required>
-      </br>
-        
-
-      <input type="number"  name="capacity" required placeholder="Capacity">
-      </br>
-
-      <input type="number" name="rooms" required placeholder="Rooms">
-      </br>
-
-      <button type="submit" class="btn btn-primary">Find Hotels</button>
-      </form>
-
-      </div>
+</div>
 
       </div>
    
-      </div>
-
+    </div>
   </div>
-
 </div>
+
+
+
 
   <main id="main">
     <!-- Hotels Section Begin -->
-    <section class="room-section spad">
+    <section class="booking-section">
         <div class="container">
-        @foreach ($hotels as $row)
+       
            
-            <div class="rooms-page-item">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="room-pic-slider owl-carousel">
-                        
-                            <div class="single-room-pic">
-                                <img src="{{ asset('user/hotel/img/room/rooms-1.jpg') }}">
-                            </div>
-                            
-                            <div class="single-room-pic">
-                                <img src="{{ asset('user/hotel/img/room/rooms-2.jpg') }}">
-                            </div>
-                            
+            
+             </br>
+             <h2>Account Info</h2> 
+             <hr>
+             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addressModal" style="float:right;">Address</button> -->
 
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="room-text">
-                            <div class="room-title">
-                                <h2>{{ $row->name }}</h2>
-                                <div class="room-price">
-                                    
-                                    
-                                
+            <form>
 
-                              <p><a href="{{ url('hotel-map') }}">view map</a></p>
+            <label><b>First Name</b> : {{ Auth::user()->fname }}</lable>
+            </br>
+            </br>
+
+            <label><b>Last Name</b> : {{ Auth::user()->lname }}</lable>
+            </br>
+            </br>
+        
+            <label><b>Email</b> : {{ Auth::user()->email }}</lable>
+            </br>
       
-                                </div>
-                            </div>
-                            <div class="room-desc">
-                                <p>{{ $row->address }}</p>
-                            </div>
-                            
-                           
-                           
-
-                            
-                            
-                          </br>
-                           
-                          
-                            <div class="room-features">
-                          <p><b>Property amenities</b></p>    
-                                <div class="room-info">
-                                    <span>Parking</span>
-                                   
-
-                                </div>
-                               
-                               
-                              
-                            </div>
-                          <h2><a href="{{ url('rooms', ['id' => $row->id]) }}">Rooms</a></h2>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+            </form>
+            
+        
+         
 
         </div>
     </section>

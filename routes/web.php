@@ -8,6 +8,8 @@ use App\Room;
 use App\Room_Type;
 use App\User;
 use App\Booking;
+use App\Review;
+
 
 
 
@@ -30,17 +32,29 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('view-map', function() {
-    $hotels = Hotel::all();
-    return view('view-map', compact('hotels'))->with('hotels',$hotels);
-})->name('view-map');
-
-
 
 Route::get('hotels', function() {
     $hotel = Hotel::all();
     return view('hotels')->with('hotels',$hotel);
 })->name('hotels');
+
+Route::get('hotel-map', function() {
+    $hotel = Hotel::all();
+    return view('hotel-map')->with('hotel',$hotel);
+})->name('hotel-map');
+
+Route::get('bookings', function() {
+    $user = User::all();
+    return view('bookings')->with('user',$user);
+})->name('bookings');
+
+Route::get('profile', function() {    
+    return view('profile');
+})->name('profile');
+
+Route::get('account-info', function() {    
+    return view('account-info');
+})->name('account-info');
 
 Route::get('rooms/{id}', 'RoomController@showRoomByHotel')->name('rooms');
 
@@ -96,7 +110,10 @@ Route::get('admin-add-users', function () {
     return view('admin.user.create-user');
 })->name('admin-add-users');
 
-
+Route::get('user-reviews', function () {
+    $reviews = Review::all();
+    return view('admin.Reviews.user-reviews')->with('reviews',$reviews);
+})->name('user-reviews');
 
 Route::get('admin-bookings', function () {
     $booking = Booking::all();

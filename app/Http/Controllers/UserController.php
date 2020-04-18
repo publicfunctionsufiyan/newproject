@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Media;
+use App\User_Contact;
 
 
 class UserController extends Controller
@@ -58,6 +59,17 @@ class UserController extends Controller
         $image = $user->getMedia('user-images');
         $url = $image[0]->getUrl();
         return $url;
+    }
+
+    public function createUserAddress(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $input = $request->all();
+        $input['user_id'] = $id;
+    
+        $user_contact = User_Contact::updateOrCreate($input);
+        return view('account-info');
+        
     }
 
 

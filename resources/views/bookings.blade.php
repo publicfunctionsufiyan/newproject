@@ -18,10 +18,8 @@
     <link rel="stylesheet" href="{{ asset('user/hotel/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/style.css') }}" type="text/css">
-
+   
     <style>
-  
-
   input[type=number], select {
     width: 60%;
     padding: 12px 20px;
@@ -92,52 +90,17 @@
     background-color: #45a049;
   }
 
+
+  
+
   </style>
+
 </head>
 
 <body>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Check Availability</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-     
-      <form method="POST">
-      
-      <label for="cars">Location</label>
-        <input type="text" class="form-group input-group">
-
-      <label for="cars">From :</label>
-        <input type="date" class="form-group input-group">
-
-      <label for="cars">To :</label>
-        <input type="date" class="form-group input-group">
-        
-
-      <label for="cars">Capacity :</label>
-        <input type="number" class="form-group input-group">
-
-        
-      <label for="cars">Rooms :</label>
-        <input type="number" class="form-group input-group">
-
-        <button type="submit" class="btn btn-primary">
-      Find Hotels
-      </button>
-        </form>
 
 
-      </div>
-   
-    </div>
-  </div>
-</div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -222,6 +185,8 @@
     </div>
   </header><!-- End Header -->
 
+
+ 
 <!-- register modal -->
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -354,150 +319,68 @@
   </div>
 
 </div>
- 
-
 
   <main id="main">
-    <!-- Rooms Section Begin -->
-    <section class="room-section spad">
+    <!-- Hotels Section Begin -->
+    <section class="booking-section">
         <div class="container">
-        @foreach ($rooms as $row)
        
            
-            <div class="rooms-page-item">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="room-pic-slider owl-carousel">
-                        
-                            <div class="single-room-pic">
-                                <img src="{{ asset('user/hotel/img/room/rooms-1.jpg') }}">
-                            </div>
-                            
-                            <div class="single-room-pic">
-                                <img src="{{ asset('user/hotel/img/room/rooms-2.jpg') }}">
-                            </div>
-                            
+             <!-- DataTales Example -->
+             </br>
+             <h2>Bookings</h2>
 
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="room-text">
-                            <div class="room-title">
-                                <h2>{{ $row->type }}</h2>
-                                <div class="room-price">
-                                <div class="room-price">
-                                    <h2>${{ $row->price }}</h2>
-                                    <sub>/night</sub>
-                                </div>
-                                    
-                        
-                                </div>
-                            </div>
+          <div class="card shadow mb-4">
+           
+           <div class="card-body">
+             <div class="table-responsive">
+               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                 <thead>
+                   <tr>
+                   <th>Id</th>
+                    <th>Hotel</th>
+                    
+                     <th>User</th>
+                     
+                     <th>From</th>
+                     <th>To</th>
+                     <th>Capacity</th>
+                     <th>Rooms</th>
+                     
+                   </tr>
+                 </thead>
+              
+                 <tbody>
+                 
 
-                            <div class="room-desc">
-                                <p>{{ $row->description }}</p>
-                                
-                            </div>
-                            
-                           
-                           </br>
-                           </br>
+                  <tr>
+                     <td></td>
+                     <td></td>
+                     
+                     <td></td>
+                    
+                     <th></th>
+                     <th></th>
+                     <th></th>
+                     <th></th>
 
-                            
-                            
-                           
-                            <div class="room-features">
-                                
-                                <div class="room-info">
-                                    
-                                    <span>Size</span>
-                                    <p>{{ $row->size }} sq. ft.</p>
-                                </div>
-                                <div class="room-info">
-                                    
-                                    <span>Beds</span>
-                                    <p>{{ $row->beds }}</p>
+                    
 
-                                </div>
-                                
-                              
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-          
-            @endforeach
+                   </tr>
+                  
+                 </tbody>
+               </table>
+             </div>
+           </div>
+         </div>
+
+       </div>
+        
 
         </div>
     </section>
 
-    <!-- Rooms Section End -->
-
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        
-      <h5 class="modal-title" id="exampleModalLongTitle">Check Availability</h5>
-
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-
-
-      </div>
-      <div class="modal-body">
-      <form>
-            <div class="form-group input-group">
-            <select class="form-control">
-              <option selected="">Hotel</option>
-              <option>Room 1</option>
-            </select>
-              </div>
-              <div class="form-group input-group">
-            <select class="form-control">
-              <option selected="">Room Type</option>
-              <option>Room 1</option>
-            </select>
-              </div>
-
-              
-              <div class="form-group input-group">
-                <input name="Customer-Name" class="form-control" placeholder="Customer Name" type="text">
-                </div> 
-
-                <div class="form-group input-group">
-                <input name="From" class="form-control" placeholder="From" type="date">
-                </div>
-                
-                <div class="form-group input-group">
-                <input name="To" class="form-control" placeholder="To" type="date">
-                </div> 
-                <div class="form-group input-group">
-                <input name="capacity" class="form-control" placeholder="Adults" type="text">
-                </div> 
-                
-                <div class="form-group input-group">
-                <input name="Rooms" class="form-control" placeholder="Rooms" type="text">
-                </div> 
-                <div class="form-group">
-                  <button type="submit" class="primary-btn btn-block">Check Availability<i class="lnr lnr-arrow-right"></i></button>
-                  </div> 
-                
-            
-             
-        </form>
-      </div>
-  
-    </div>
-  </div>
-</div>
-      </div>
-
+    <!-- Hotels Section End -->
   </main><!-- End #main -->
 
   @extends('layouts.footer')

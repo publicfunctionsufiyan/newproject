@@ -32,7 +32,7 @@ class RegisterController extends Controller
     
     public function create(Request $request)
     {
-        $validator = Validator::make($request->all(), ['name' => 'required', 'email' => 'required|email', 'password' => 'required|confirmed|min:8']);
+        $validator = Validator::make($request->all(), ['fname' => 'required', 'lname' => 'required', 'email' => 'required|email', 'password' => 'required|confirmed|min:8']);
         
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
@@ -41,7 +41,9 @@ class RegisterController extends Controller
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
 
+        if ($user->user_type == 0) $user->assignRole('admin');
         if ($user->user_type == 1) $user->assignRole('user');
+        if ($user->user_type == 2) $user->assignRole('owner');
         
         $registered['token'] = $user->createToken('Laravel Password Grant Client')->accessToken;
         $registered['user'] = $user;
@@ -58,7 +60,7 @@ class RegisterController extends Controller
 
     public function addUser(Request $request)
     {
-        $validator = Validator::make($request->all(), ['name' => 'required', 'email' => 'required|email', 'password' => 'required|confirmed|min:8']);
+        $validator = Validator::make($request->all(), ['fname' => 'required', 'lname' => 'required', 'email' => 'required|email', 'password' => 'required|confirmed|min:8']);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
         }

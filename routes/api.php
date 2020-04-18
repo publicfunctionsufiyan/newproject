@@ -32,8 +32,8 @@ Route::post('create-User', 'RegisterController@createUser')->name('create-User')
 // User Routes
 Route::post('profile-picture/{id}', 'UserController@profilePicture'); 
 Route::get('get-media/{id}', 'UserController@getimage'); 
-
-Route::post('update-user/{id}', 'UserController@update');
+Route::post('user-contact/{id}', 'UserController@createUserAddress')->name('user-contact');
+Route::post('update-user/{id}', 'UserController@update')->name('update-user');
 Route::delete('delete-user/{id}', 'UserController@deleteUser');
 Route::get('show-all-users', 'UserController@showAllUsers');
 Route::get('show-user-by-id/{id}', 'UserController@showUserById');

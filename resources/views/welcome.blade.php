@@ -12,6 +12,7 @@
   <!-- Favicons -->
   <link href="{{ asset('user/assets/img/favicon.png') }}" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -125,6 +126,9 @@
         <ul>
         
         
+        <li><a href="{{ url('hotels') }}">
+        <i class="fa fa-edit fa-lg"></i>
+        </a></li>
         
         <li><a href="{{ url('hotels') }}">Hotels</a></li>
         
@@ -144,7 +148,7 @@
                         @else
                             <li class="drop-down">
                                 <a href="#">
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->fname }}
                                 </a>
                                 <ul>
                                 
@@ -155,9 +159,15 @@
                                 </li>
                                 @elseif(Auth::user()->user_type == 1)
                                 
-                                  <li>
-                             <a href="{{ route('my-bookings') }}">My Booking</a>
+                                <li>
+                             <a href="{{ route('profile') }}">View profile</a>
+                                </li><li>
+                             <a href="{{ route('bookings') }}">Bookings</a>
                                 </li>
+                                  <li>
+                             <a href="{{ route('account-info') }}">Account info</a>
+                                </li>
+                                
 
                             @endif
 
@@ -225,7 +235,9 @@
 
 <form method="POST" action="{{ route('register') }}">
 @csrf
-  <input type="text" placeholder="Name" required name="name">
+  <input type="text" placeholder="First Name" required name="fname">
+</br>
+<input type="text" placeholder="Last Name"  name="lname">
 </br>
   <input type="email" placeholder="Email" required name="email">
 </br>

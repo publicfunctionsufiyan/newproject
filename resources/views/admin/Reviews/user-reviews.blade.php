@@ -28,7 +28,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-      <!-- Sidebar -->
+       <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
@@ -37,7 +37,7 @@
    
   </div>
   <img src="{{ asset('user/assets/img/logo.png') }}" width="70%">
-  
+
 </a>
 
 
@@ -66,7 +66,7 @@
       <a class="collapse-item" href="{{ url('admin-amenities') }}">Hotel Amenities</a>
       <a class="collapse-item" href="{{ url('admin-blocks') }}">Blocks</a>
       <a class="collapse-item" href="{{ url('admin-rooms') }}">Rooms</a>
-      
+     
 
 
     </div>
@@ -277,8 +277,6 @@
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-              
-               
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                              onclick="event.preventDefault();
@@ -303,8 +301,8 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Users</h1>
-            <a href="{{ url('admin-add-users') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add New</a>
+            <h1 class="h3 mb-0 text-gray-800">User Reviews</h1>
+            
           </div>
 
           <!-- DataTales Example -->
@@ -316,33 +314,46 @@
                   <thead>
                     <tr>
                       <th>Id</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>User Type</th>
-                      <th>Edit</th>
+                      <th>Hotel</th>
+                      <th>User</th>
+                      <th>Title</th>
+                      <th>Review</th>
+                      <th>Travel Date</th>
+                      <th>Experience</th>
+                     
+                   
                     <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>User Type</th>
-                      <th>Edit</th>
+                    <th>Id</th>
+                      <th>Hotel</th>
+                      <th>User</th>
+                      <th>Title</th>
+                      <th>Review</th>
+                      <th>Travel Date</th>
+                      <th>Experience</th>
+                     
+                   
                     <th>Delete</th>
-                    </tr>
+                    </tr>   
                   </tfoot>
                   <tbody>
-                  @foreach ($user as $row)
+                  @foreach ($reviews as $row)
 
                    <tr>
                       <td>{{ $row->id }}</td>
-                      <td>{{ $row->name }}</td>
-                      <td>{{ $row->email }}</td>
-                      <td>{{ $row->user_type }}</td>
-                      <td width="5%"><i class="fas fa-edit text-gray-300" data-toggle="modal" data-target="#exampleModalCenter"></i></td>
+                      <td>{{ $row->user_id }}</td>
+                      <td>{{ $row->hotel_id }}</td>
+                      <td>{{ $row->title }}</td>
+                      <td>{{ $row->review }}</td>
+                      <td>{{ $row->travel_date }}</td>
+                      <td>{{ $row->own_experience }}$</td>
+                      
+                     
                       <td width="5%"><i class="fas fa-trash text-gray-300"></i></td>
+
                     </tr>
                    @endforeach
                   </tbody>
