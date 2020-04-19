@@ -33,7 +33,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-            <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logo.png') }}" height="30px"></a>
+            <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="30px"></a>
 </br>
 </br> 
 
@@ -49,10 +49,10 @@
           <div class="col-lg-2 col-md-6 footer-links">
             
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms Of Use</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy Policy</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+              <li> <a href="#">Terms Of Use</a></li>
+              <li> <a href="#">Privacy Policy</a></li>
+              <li><a href="#">About</a></li>
+              <li> <a href="#">Contact</a></li>
 
               
             </ul>
@@ -91,7 +91,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  
 
   <!-- Vendor JS Files -->
   <script src="{{ asset('user/assets/vendor/jquery/jquery.min.js') }}"></script>

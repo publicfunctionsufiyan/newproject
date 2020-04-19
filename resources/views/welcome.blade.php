@@ -34,8 +34,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
-<style>
+  <style>
   input[type=number], select {
     width: 60%;
     padding: 12px 20px;
@@ -110,6 +109,8 @@
   
 
   </style>
+</head>
+
 <body>
 
   <!-- ======= Header ======= -->

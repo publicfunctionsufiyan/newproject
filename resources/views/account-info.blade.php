@@ -174,29 +174,18 @@
 
       <h2>Address</h2>
       <form method="POST" action="{{ route('user-contact', Auth::user()->id) }}">
-            <label>Street Address</lable>
+        
+            <input type="text" class="form-control" name="address" placeholder="Street Address">
             </br>
-            <input type="text" class="form-control" name="address">
+            <input type="text" class="form-control" name="city" placeholder="City">
             </br>
-            <label>City</lable>
+            <input type="text" class="form-control" name="state" placeholder="State/Province/Region">
             </br>
-            <input type="text" class="form-control" name="city">
+            <input type="text" class="form-control" name="postalcode" placeholder="Zip code/Postal code">
             </br>
-            <label>State/Province/Region</lable>
+            <input type="text" class="form-control" name="country" placeholder="Country">
             </br>
-            <input type="text" class="form-control" name="state">
-            </br>
-            <label>Zip code/Postal code</lable>
-            </br>
-            <input type="text" class="form-control" name="postalcode">
-            </br>
-            <label>Country</lable>
-            </br>
-            <input type="text" class="form-control" name="country">
-            </br>
-            <label>Phone number</lable>
-            </br>
-            <input type="text" class="form-control" name="phone">
+            <input type="text" class="form-control" name="phone" placeholder="Phone number">
             </br>
             <button type="submit" class="btn btn-primary">Save</button>
             </form>
@@ -222,22 +211,8 @@
              </br>
              <h2>Account Info</h2> 
              <hr>
-             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addressModal" style="float:right;">Address</button> -->
+             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addressModal" style="float:right;">Address</button>
 
-            <form>
-
-            <label><b>First Name</b> : {{ Auth::user()->fname }}</lable>
-            </br>
-            </br>
-
-            <label><b>Last Name</b> : {{ Auth::user()->lname }}</lable>
-            </br>
-            </br>
-        
-            <label><b>Email</b> : {{ Auth::user()->email }}</lable>
-            </br>
-      
-            </form>
             
         
          

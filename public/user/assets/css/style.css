@@ -1214,15 +1214,15 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: black;
+  background: #faf1ed;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
 }
 
 #footer .footer-top {
-  background: #0c1817;
-  border-bottom: 1px solid #18302c;
+  background: #faf1ed;
+
   padding: 60px 0 30px 0;
 }
 
@@ -1243,14 +1243,14 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
-  color: #fff;
+  color: black;
+
 }
 
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #1c3733;
-  color: #fff;
+  color: black;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1262,15 +1262,15 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #1bac91;
-  color: #fff;
+ 
+  color: black;
   text-decoration: none;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color:#0000;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1303,19 +1303,21 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #fff;
+  color: black;
+
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #34dfbf;
+  opacity: 60%;
 }
 
 #footer .footer-top .footer-newsletter form {
   margin-top: 30px;
-  background: #fff;
+  color: black;
+
   padding: 6px 10px;
   position: relative;
   border-radius: 4px 0 0 4px;
@@ -1337,7 +1339,7 @@ section {
   font-size: 16px;
   padding: 0 20px;
   background: #1bac91;
-  color: #fff;
+  color: black;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
 }
@@ -1349,11 +1351,13 @@ section {
 #footer .copyright {
   text-align: center;
   padding-top: 30px;
+  color: black;
+
 }
 
 #footer .credits {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
-  color: #fff;
+  color: black;
 }

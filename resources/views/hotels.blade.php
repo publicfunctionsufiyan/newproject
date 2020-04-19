@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="{{ asset('user/hotel/css/style.css') }}" type="text/css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-   
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
   input[type=number], select {
     width: 60%;
@@ -92,8 +94,6 @@
     background-color: #45a049;
   }
 
-
-  
 
   </style>
 
@@ -325,6 +325,8 @@
   <main id="main">
     <!-- Hotels Section Begin -->
     <section class="room-section spad">
+               
+      
         <div class="container">
         @foreach ($hotels as $row)
            
@@ -353,7 +355,7 @@
                                     
                                 
 
-                              <p><a href="{{ url('hotel-map') }}">view map</a></p>
+                              <p><a href="{{ url('hotel-map') }}">view details</a></p>
       
                                 </div>
                             </div>
@@ -369,18 +371,14 @@
                           </br>
                            
                           
-                            <div class="room-features">
-                          <p><b>Property amenities</b></p>    
-                                <div class="room-info">
-                                    <span>Parking</span>
-                                   
-
-                                </div>
+  
                                
                                
                               
                             </div>
-                          <h2><a href="{{ url('rooms', ['id' => $row->id]) }}">Rooms</a></h2>
+</br>
+
+                          <h3><a href="{{ url('rooms', ['id' => $row->id]) }}">Rooms</a></h3>
 
                         </div>
                     </div>
@@ -389,6 +387,7 @@
             @endforeach
 
         </div>
+       
     </section>
 
     <!-- Hotels Section End -->
