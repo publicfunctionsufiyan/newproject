@@ -57,5 +57,10 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany('App\Review','user_id');
     }
+
+    public function contact()
+    {
+        return $this->hasOne('App\User_Contact');
+    }
     
 }

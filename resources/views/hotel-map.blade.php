@@ -14,8 +14,6 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -30,10 +28,89 @@
   
   <link href="{{ asset('user/assets/css/style.css') }}" rel="stylesheet">
 
- 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <style>
   
+  
+  <style>
+  input[type=number], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=date], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  
+
+  input[type=text], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=email], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=password], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+
+  
+
+  
+
       #map {
         height: 75%;
         width: 100%;
@@ -132,12 +209,139 @@
 
     </div>
   </header><!-- End Header -->
+
+<!-- register modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="40px"></a>
+
+
+        
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+    <div class="container text-center text-md-center">
+
+    <h2>Create your account</h2>
+
+<form method="POST" action="{{ route('register') }}">
+@csrf
+  <input type="text" placeholder="First Name" required name="fname">
+</br>
+<input type="text" placeholder="Last Name"  name="lname">
+</br>
+  <input type="email" placeholder="Email" required name="email">
+</br>
+  <input type="password" placeholder="Password" required name="password">
+</br>
+<input type="password" placeholder="Confirm Password" required name="password_confirmation">
+</br>
+<button type="submit" class="btn btn-primary">
+{{ __('Sign Up') }}
+</button>
+
+</form>
+</div>
+
+      </div>
+   
+    </div>
+  </div>
+</div>
+
+<!-- login modal -->
+
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logofullblack.png') }}" height="40px"></a>
+
+
+        
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+    <div class="container text-center text-md-center">
+
+      <h2>Sign in</h2>
+
+      <form method="POST" action="{{ route('login') }}">
+      @csrf
+
+        <input type="email" placeholder="Email" required name="email">
+      </br>
+        <input type="password" placeholder="Password" required name="password">
+      </br>
+      <button type="submit" class="btn btn-primary">
+                                    Sign In
+                                </button>
+      </form>
+</div>
+
+      </div>
+   
+    </div>
+  </div>
+</div>
+
   <!-- ======= Testimonials Section ======= -->
 
 
 
 
+  <div class="modal fade" id="moreInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-body">
+     <h2>Ameneties</h2>
+      </br>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">Ameneties</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">Room Features</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2">Room Types</a>
+    </li>
+  </ul>
 
+
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h3>Ameneties</h3>
+      
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3>Room Features</h3>
+      
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3>Room Types</h3>
+      
+    </div>
+  </div>
+</div>
+
+      </div>
+   
+    </div>
+  </div>
+</div>
       
 
      
@@ -153,6 +357,13 @@
 <div>
           <h2>Hotel Name</h2>
           <p>reviews</p>
+
+          <p data-toggle="dropdown" style="position:absolute; right:80px; top:182px;"><i class="fa fa-share"></i> share</p>
+          <ul class="dropdown-menu">
+      <li class="text-center"><i class="fa fa-link"></i> Copy link</li>
+      
+    </ul>
+
           <hr>
           <p><i class="fa fa-map-marker"></i> location | <i class="fa fa-phone"></i> +92 000 000 0000 | <i class="fa fa-globe"></i> website</p>
         </div>
@@ -186,7 +397,7 @@
 <li>Wifi</li>
 </ul>
 </br>
-<p><b>More info</b></p>
+<p><b><a class="btn-get-started scrollto" data-toggle="modal" data-target="#moreInfoModal">More info</a></b></p>
 
         
             </div>

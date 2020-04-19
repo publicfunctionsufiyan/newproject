@@ -18,13 +18,14 @@ class CreateRoomsTable extends Migration
             $table->unsignedInteger('hotel_id');
             $table->unsignedInteger('block_id');
             $table->string('type');
-            $table->string('description');
+            $table->string('view');
+            $table->longText('detail');
             $table->string('size');
-            $table->string('beds');
+            $table->string('bed');
+            $table->string('person_sleeps');
             $table->integer('floor');
             $table->integer('price');
             $table->boolean('availablity')->default(1);
-
             $table->timestamps();
         });
 

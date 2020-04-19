@@ -18,7 +18,6 @@ class CreateBlocksTable extends Migration
             $table->unsignedInteger('hotel_id');
             $table->string('name');
             $table->integer('floors');
-
             $table->timestamps();
         });
 

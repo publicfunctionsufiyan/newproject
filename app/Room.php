@@ -12,7 +12,7 @@ class Room extends Model implements HasMedia
     public $with = ['media'];
 
     protected $fillable = [
-        'hotel_id', 'block_id', 'type', 'description', 'size', 'beds', 'floor','price', 'availablity'
+        'hotel_id', 'block_id', 'type', 'view', 'detail', 'size', 'bed', 'person_sleeps', 'floor','price', 'availablity'
     ];
 
     public function hotels()

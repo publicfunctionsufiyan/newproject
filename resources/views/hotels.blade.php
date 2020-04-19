@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('user/hotel/css/bootstrap.min.css') }}" type="text/css">
+    <!-- <link rel="stylesheet" href="{{ asset('user/hotel/css/bootstrap.min.css') }}" type="text/css"> -->
     <link rel="stylesheet" href="{{ asset('user/hotel/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/flaticon.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/linearicons.css') }}" type="text/css">
@@ -18,11 +18,12 @@
     <link rel="stylesheet" href="{{ asset('user/hotel/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/style.css') }}" type="text/css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+
     <style>
   input[type=number], select {
     width: 60%;
@@ -104,15 +105,13 @@
 
 
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
+<header id="header" class="fixed-top">
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-      <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logoMain.png') }}"></a> 
-      
-
-        
+        <a href="{{ url('/') }}"><img src="{{ asset('user/assets/img/logoMain.png') }}"></a> 
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -135,7 +134,7 @@
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                 <a class="btn-get-started scrollto" data-toggle="modal" data-target="#registerModal">Register</a>
-                                    
+                    
                                 </li>
                             @endif
                         @else
@@ -184,6 +183,8 @@
                         @endguest
                     </ul>
       </nav>
+      <!-- .nav-menu -->
+
     </div>
   </header><!-- End Header -->
 
@@ -332,9 +333,11 @@
            
             <div class="rooms-page-item">
                 <div class="row">
+                   
+                   
                     <div class="col-lg-6">
                         <div class="room-pic-slider owl-carousel">
-                        
+                            
                             <div class="single-room-pic">
                                 <img src="{{ asset('user/hotel/img/room/rooms-1.jpg') }}">
                             </div>
@@ -343,40 +346,33 @@
                                 <img src="{{ asset('user/hotel/img/room/rooms-2.jpg') }}">
                             </div>
                             
-
                         </div>
                     </div>
+                  
+                  
+                  
                     <div class="col-lg-6">
                         <div class="room-text">
+                           
                             <div class="room-title">
-                                <h2>{{ $row->name }}</h2>
-                                <div class="room-price">
-                                    
-                                    
                                 
-
-                              <p><a href="{{ url('hotel-map') }}">view details</a></p>
-      
+                                <h2>{{ $row->name }}</h2>
+                              
+                                <div class="room-price"> 
+                                <p><a href="{{ url('hotel-map') }}">view details</a></p>
                                 </div>
+
                             </div>
+
                             <div class="room-desc">
                                 <p>{{ $row->address }}</p>
                             </div>
                             
-                           
-                           
-
-                            
-                            
                           </br>
-                           
+                             
+                          </div>
                           
-  
-                               
-                               
-                              
-                            </div>
-</br>
+                          </br>
 
                           <h3><a href="{{ url('rooms', ['id' => $row->id]) }}">Rooms</a></h3>
 
@@ -405,6 +401,9 @@
     <script src="{{ asset('user/hotel/js/jquery.slicknav.js') }}"></script>
     <script src="{{ asset('user/hotel/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('user/hotel/js/main.js') }}"></script>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('user/hotel/css/bootstrap.min.css') }}" type="text/css">
+    <!-- <link rel="stylesheet" href="{{ asset('user/hotel/css/bootstrap.min.css') }}" type="text/css"> -->
     <link rel="stylesheet" href="{{ asset('user/hotel/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/flaticon.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/hotel/css/linearicons.css') }}" type="text/css">
@@ -367,6 +367,8 @@
            
             <div class="rooms-page-item">
                 <div class="row">
+                   
+                   
                     <div class="col-lg-6">
                         <div class="room-pic-slider owl-carousel">
                         
@@ -377,10 +379,11 @@
                             <div class="single-room-pic">
                                 <img src="{{ asset('user/hotel/img/room/rooms-2.jpg') }}">
                             </div>
-                            
-
+                          
                         </div>
                     </div>
+
+
                     <div class="col-lg-6">
                         <div class="room-text">
                             <div class="room-title">
@@ -404,26 +407,6 @@
                            </br>
                            </br>
 
-                            
-                            
-                           
-                            <div class="room-features">
-                                
-                                <div class="room-info">
-                                    
-                                    <span>Size</span>
-                                    <p>{{ $row->size }} sq. ft.</p>
-                                </div>
-                                <div class="room-info">
-                                    
-                                    <span>Beds</span>
-                                    <p>{{ $row->beds }}</p>
-
-                                </div>
-                                
-                              
-                            </div>
-                            
                             
                         </div>
                     </div>

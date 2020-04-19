@@ -14,7 +14,7 @@ class Hotel extends Model implements HasMedia
 
 
     protected $fillable = [
-        'name', 'address', 'rating', 'blocks', 'let', 'long', 'zoom'
+        'name', 'description', 'class', 'blocks', 'let', 'long'
     ];
 
 
@@ -41,6 +41,11 @@ class Hotel extends Model implements HasMedia
     public function reviews()
     {
         return $this->hasMany('App\Review','hotel_id');
+    }
+
+    public function contact()
+    {
+        return $this->hasOne('App\Hotel_Contact');
     }
 
 

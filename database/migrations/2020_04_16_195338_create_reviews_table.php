@@ -17,6 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('hotel_id');
+            $table->integer('rating');
             $table->string('title');
             $table->longText('review');
             $table->date('travel_date');
